@@ -1,0 +1,9 @@
+{
+  "name": "web programming application project",
+  "short_name": "Project",
+  "lang": "english",
+  "start_url": ".",
+  "orientation": "any",
+  "background_color": "#282c34",
+  "theme_color": "#00ffff"
+}
