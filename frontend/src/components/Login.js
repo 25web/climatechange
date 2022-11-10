@@ -10,8 +10,8 @@ export default function Login() {
         </h2>
       </div>
       <div className="input-container">
-        <input type="text" placeholder="Email" />
-        <i class="zmdi zmdi-email zmdi-hc-lg"></i>
+        <input type="text" placeholder="Username" />
+        <i class="zmdi zmdi-account zmdi-hc-lg"></i>
       </div>
 
       <div className="input-container">
