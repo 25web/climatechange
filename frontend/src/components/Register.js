@@ -14,8 +14,8 @@ export default function Register() {
         <input className="inputw2" type="text" placeholder="Last Name" />
       </div>
       <div className="input-container">
-        <input type="text" placeholder="Email" />
-        <i class="zmdi zmdi-email zmdi-hc-lg"></i>
+        <input type="text" placeholder="Username" />
+        <i class="zmdi zmdi-account zmdi-hc-lg"></i>
       </div>
 
       <div className="input-container">
