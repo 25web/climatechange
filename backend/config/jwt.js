@@ -6,7 +6,7 @@ function generateToken(user){
     return jwt.sign({userId:user}, process.env.JWT_SECRET, {expiresIn: "1h"});
 }
 
-function verifyToken(token){
+function verifyToken(req, res, next){
     const authHeader = req.headers['authorization'];
     const token = authHeader && authHeader.split(' ')[1];
     if(token == null) return res.sendStatus(401);
