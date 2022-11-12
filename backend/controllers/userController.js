@@ -8,11 +8,13 @@ const username1 = "utest";
 const password1 =
   "$2a$10$4njJjFDCPEkXmKPw3hnY5e2Z8tv5H/nUJVZhBjOmVFuKZjI0o2EV2";
 
-const userLogin = (req, res) => {
+const login = (req, res) => {
   const { username, password } = req.body;
 
   if (!username || !password) {
-    res.status(400).json({ message: "Please enter username and password." });
+    return res
+      .status(400)
+      .json({ message: "Please enter username and password." });
   }
   // -- waiting db --
   // user.getByUsername(username, (err, result) => {
@@ -28,17 +30,17 @@ const userLogin = (req, res) => {
   if (username === username1) {
     bcrypt.compare(password, password1, (err, match) => {
       if (err) {
-        res.json(err);
+        return res.json(err);
       }
       if (match) {
         // const token = jwt.generateToken(result[0].id);
-        res.status(200).json({
+        return res.status(200).json({
           status: "success",
           message: "Successfully logged in.",
         });
       } else {
         console.log("Invalid username or password!");
-        res.json({
+        return res.json({
           status: "error",
           message: "Invalid username or password.",
         });
@@ -46,7 +48,7 @@ const userLogin = (req, res) => {
     });
   } else {
     console.log("Invalid username or password!");
-    res.json({
+    return res.json({
       status: "error",
       message: "Invalid username or password.",
     });
@@ -82,5 +84,5 @@ const getAllUsers = (req, res) => {
 module.exports = {
   register,
   getAllUsers,
-  userLogin,
+  login,
 };
