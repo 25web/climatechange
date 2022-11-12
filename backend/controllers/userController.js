@@ -3,6 +3,57 @@ const crypto = require("crypto");
 const jwt = require("../config/jwt");
 const user = require("../models/userModel");
 
+const username1 = "utest";
+//same as password1 = "ptest";
+const password1 =
+  "$2a$10$4njJjFDCPEkXmKPw3hnY5e2Z8tv5H/nUJVZhBjOmVFuKZjI0o2EV2";
+
+const userLogin = (req, res) => {
+  const { username, password } = req.body;
+
+  if (!username || !password) {
+    res.status(400).json({ message: "Please enter username and password." });
+  }
+  // -- waiting db --
+  // user.getByUsername(username, (err, result) => {
+  //   if (err) {
+  //     console.log(err);
+  //     return res.status(500).json({ message: "Internal server error." });
+  //   }
+  //   if (result.length === 0) {
+  //     return res.status(400).json({ message: "Invalid username or password." });
+  //   }
+  // bcrypt.compare(password, result[0].password, (err, match) => {
+
+  if (username === username1) {
+    bcrypt.compare(password, password1, (err, match) => {
+      if (err) {
+        res.json(err);
+      }
+      if (match) {
+        // const token = jwt.generateToken(result[0].id);
+        res.status(200).json({
+          status: "success",
+          message: "Successfully logged in.",
+        });
+      } else {
+        console.log("Invalid username or password!");
+        res.json({
+          status: "error",
+          message: "Invalid username or password.",
+        });
+      }
+    });
+  } else {
+    console.log("Invalid username or password!");
+    res.json({
+      status: "error",
+      message: "Invalid username or password.",
+    });
+  }
+  // });
+};
+
 const register = (req, res) => {
   if (
     !req.body.username ||
@@ -31,4 +82,5 @@ const getAllUsers = (req, res) => {
 module.exports = {
   register,
   getAllUsers,
+  userLogin,
 };
