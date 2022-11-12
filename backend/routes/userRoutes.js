@@ -5,5 +5,6 @@ const userController = require("../controllers/userController");
 
 router.get("/", jwt.verifyToken, userController.getAllUsers);
 router.post("/register", userController.register);
+router.get("/:username", userController.getByUsername);
 
 module.exports = router;
