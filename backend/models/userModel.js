@@ -19,8 +19,7 @@ const user = {
       [username],
       callback
     );
-  }
-
+  },
 };
 
 module.exports = user;

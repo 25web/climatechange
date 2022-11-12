@@ -3,7 +3,7 @@ var router = express.Router();
 const jwt = require("../config/jwt");
 const userController = require("../controllers/userController");
 
-router.get('/', jwt.verifyToken, userController.getAllUsers);
-router.post('/register', userController.register);
+router.get("/", jwt.verifyToken, userController.getAllUsers);
+router.post("/register", userController.register);
 
 module.exports = router;
