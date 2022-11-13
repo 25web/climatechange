@@ -1,6 +1,6 @@
 import "../css/LR.scss";
 import React, { useState } from "react";
-import Axios from "axios";
+import axios from "../axios";
 import { useNavigate } from "react-router-dom";
 
 export default function Login() {
@@ -24,7 +24,7 @@ export default function Login() {
     json: true,
   };
   const login = () => {
-    Axios(authOptions)
+    axios(authOptions)
       .then((res) => {
         console.log(res);
         if (res.status === 200) {
