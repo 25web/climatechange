@@ -31,8 +31,7 @@ const login = (req, res) => {
           message: "Successfully logged in.",
         });
       } else {
-        console.log("Invalid username or password!");
-        return res.json({
+        return res.status(400).json({
           message: "Invalid username or password.",
         });
       }
