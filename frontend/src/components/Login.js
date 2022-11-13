@@ -1,10 +1,13 @@
 import "../css/LR.scss";
 import React, { useState } from "react";
 import Axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [message, setMessage] = useState("");
+  const navigate = useNavigate();
   let url = `http://localhost:3001/user/login`;
 
   let body = JSON.stringify({
@@ -24,10 +27,15 @@ export default function Login() {
     Axios(authOptions)
       .then((res) => {
         console.log(res);
-        localStorage.setItem("token", res.data.token);
+        if (res.status === 200) {
+          localStorage.setItem("token", res.data.token);
+          navigate("/"); // the right one will be added later
+        }
+        setMessage(res.data.message);
       })
-      .catch((error) => {
-        console.log(error);
+      .catch((err) => {
+        console.log(err.response.data);
+        setMessage(err.response.data.message);
       });
   };
 
@@ -59,6 +67,9 @@ export default function Login() {
           placeholder="Password"
         />
         <i className="zmdi zmdi-lock zmdi-hc-lg"></i>
+      </div>
+      <div className="pmessage">
+        <p>{message}</p>
       </div>
       <div className="container">
         <button onClick={login} className="btn" data="Login"></button>

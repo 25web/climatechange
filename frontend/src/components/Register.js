@@ -4,8 +4,8 @@ export default function Register() {
   return (
     <div className="register-App">
       <div className="divp">
-        <h2 class="active"> Register </h2>
-        <h2 class="inactive underlineHover">
+        <h2 className="active"> Register </h2>
+        <h2 className="inactive underlineHover">
           <a href="/login">Login</a>
         </h2>
       </div>
@@ -15,16 +15,16 @@ export default function Register() {
       </div>
       <div className="input-container">
         <input type="text" placeholder="Username" />
-        <i class="zmdi zmdi-account zmdi-hc-lg"></i>
+        <i className="zmdi zmdi-account zmdi-hc-lg"></i>
       </div>
 
       <div className="input-container">
         <input type="password" placeholder="Password" />
-        <i class="zmdi zmdi-lock zmdi-hc-lg"></i>
+        <i className="zmdi zmdi-lock zmdi-hc-lg"></i>
       </div>
 
-      <div class="container">
-        <button class="btn" data="Register"></button>
+      <div className="container">
+        <button className="btn" data="Register"></button>
       </div>
     </div>
   );
