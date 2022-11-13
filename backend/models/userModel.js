@@ -20,6 +20,14 @@ const user = {
       callback
     );
   },
+
+  getById: function (id, callback) {
+    return db.query(
+      "SELECT * FROM id WHERE user_ID = ?",
+      [id],
+      callback
+    );
+  },
 };
 
 module.exports = user;

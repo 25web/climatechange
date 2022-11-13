@@ -45,10 +45,24 @@ const getByUsername = (req, res) => {
     }
     return res.status(200).json(result[0]);
   });
+
+  const getById = (req, res) => {
+    user.getById(req.params.id, function (err, result) {
+      if (err) {
+        res.status(400).json({ message: "Error." });
+        return;
+      }
+      if (result.length === 0) {
+        res.status(400).json({ message: "Id not found." });
+        return;
+      }
+      return res.status(200).json(result[0]);
+    });
 };
 
 module.exports = {
   register,
   getAllUsers,
   getByUsername,
-};
+  getById,
+};}
