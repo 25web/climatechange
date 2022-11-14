@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www"
   },
   "dependencies": {
     "bcrypt": "^5.1.0",
@@ -23,6 +24,7 @@
     "chai": "^4.3.7",
     "eslint": "^8.27.0",
     "eslint-plugin-import": "^2.26.0",
-    "mocha": "^10.1.0"
+    "mocha": "^10.1.0",
+    "nodemon": "^2.0.20"
   }
 }
