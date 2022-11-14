@@ -15,8 +15,8 @@ body {
   // background-image: $gradient;
   background-color: lighten($gray, 6%);
   height: 100vh;
-  overflow: hidden;
-  display: flex;
+  overflow: auto;
+  // display: flex;
   justify-content: center;
   align-items: center;
 }
