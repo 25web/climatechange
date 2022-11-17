@@ -7,10 +7,13 @@ import "chartjs-adapter-luxon";
 
 export function Chart() {
   const [chartData, setChartData] = useState([]);
+  const [chartData2, setChartData2] = useState([]);
+  const [test, setTest] = useState(false);
 
   useEffect(() => {
     GetChart("/chart/v1", (res) => {
-      setChartData(res.data);
+      setChartData(res.data.resMonthly);
+      setChartData2(res.data.resAnnual);
     });
   }, []);
 
@@ -18,7 +21,7 @@ export function Chart() {
     datasets: [
       {
         label: "global",
-        data: chartData,
+        data: test ? chartData : chartData2,
         borderColor: "rgb(4, 255, 46)",
         backgroundColor: "rgb(4, 255, 46)",
         parsing: {
@@ -29,7 +32,7 @@ export function Chart() {
       },
       {
         label: "southern",
-        data: chartData,
+        data: test ? chartData : chartData2,
         borderColor: "rgb(4, 226, 255)",
         backgroundColor: "rgb(4, 226, 255)",
         parsing: {
@@ -40,7 +43,7 @@ export function Chart() {
       },
       {
         label: "northern",
-        data: chartData,
+        data: test ? chartData : chartData2,
         borderColor: "rgb(255, 4, 234)",
         backgroundColor: "rgb(255, 4, 234)",
         parsing: {
@@ -57,7 +60,7 @@ export function Chart() {
       x: {
         type: "time",
         time: {
-          unit: "year",
+          unit: test ? "year" : "month",
         },
       },
 
@@ -74,6 +77,7 @@ export function Chart() {
     <>
       <div className="chart-wrapper">
         <Line options={optionsYear} data={data} />
+        <button onClick={() => setTest(!test)}>test</button>
       </div>
     </>
   );
