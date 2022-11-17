@@ -12,7 +12,7 @@ const getV1monthly = (req, res) => {
     }
     return res
       .status(200)
-      .json({ resMonthly: result[0], resAnnual: result[1] });
+      .json({ resMonthly: result[0], resAnnual: result[1], resV2: result[2] });
   });
 };
 
