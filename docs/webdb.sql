@@ -21,8 +21,6 @@ USE webdb;
 --
 -- Table structure for table `users`
 --
-CREATE DATABASE webdb;
-USE webdb;
 
 DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -116,7 +114,7 @@ CREATE TABLE `v2` (
   `a+` double DEFAULT NULL,
   `ab-` double DEFAULT NULL,
   `ab+` double DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -140,7 +138,7 @@ CREATE TABLE `v3_annual` (
   `year` tinytext,
   `mean` double DEFAULT NULL,
   `unc` double DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -169,7 +167,7 @@ CREATE TABLE `v3_monthly` (
   `ndays` double DEFAULT NULL,
   `sdev` double DEFAULT NULL,
   `unc` double DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
