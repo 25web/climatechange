@@ -13,9 +13,9 @@ $gradient: linear-gradient(
 .login-App {
   padding-bottom: 10px;
   background: $gray;
-  height: 340px;
+  // height: 340px;
   width: 520px;
-  margin: 0 auto;
+  margin: 75px auto;
   border-radius: 5px;
   box-shadow: 0px 4px 30px -5px rgba(0, 0, 0, 0.65);
   display: flex;
@@ -27,7 +27,7 @@ $gradient: linear-gradient(
   background: $gray;
   height: 420px;
   width: 520px;
-  margin: 0 auto;
+  margin: 75px auto;
   border-radius: 5px;
   box-shadow: 0px 4px 30px -5px rgba(0, 0, 0, 0.65);
   display: flex;

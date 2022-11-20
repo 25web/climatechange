@@ -22,13 +22,9 @@ body {
   overflow: auto;
 }
 .main {
-  //   border: solid;
-  //   height: 100vh;
-  min-height: calc(100vh - 40px);
+  min-height: calc(100vh - 20px);
 }
 .footer {
-  //   border: solid;
-  //   height: 20px;
   background: #222;
   color: white;
 }
