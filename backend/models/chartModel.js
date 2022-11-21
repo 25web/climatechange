@@ -1,9 +1,15 @@
 const db = require("../config/db");
 
 const chart = {
-  getV1monthly: function (callback) {
+  getV1: function (callback) {
     return db.query(
       "SELECT * FROM v1_monthly; SELECT * FROM v1_annual; SELECT * FROM v2",
+      callback
+    );
+  },
+  getV3: function (callback) {
+    return db.query(
+      "SELECT year, mean FROM v3_monthly; SELECT year, mean FROM v3_annual;",
       callback
     );
   },
