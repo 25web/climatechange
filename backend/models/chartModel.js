@@ -9,7 +9,7 @@ const chart = {
   },
   getV3: function (callback) {
     return db.query(
-      "SELECT year, mean FROM v3_monthly; SELECT year, mean FROM v3_annual;",
+      "SELECT * FROM v3_monthly; SELECT * FROM v3_annual;",
       callback
     );
   },
