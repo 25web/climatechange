@@ -7,6 +7,9 @@ const chart = {
       callback
     );
   },
+  getV5: function (callback) {
+    return db.query("SELECT * FROM v5", callback);
+  },
 };
 
 module.exports = chart;
