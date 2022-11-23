@@ -15,6 +15,8 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+CREATE DATABASE webdb;
+USE webdb;
 --
 -- Table structure for table `users`
 --
@@ -111,9 +113,11 @@ CREATE TABLE `v2` (
   `a+` double DEFAULT NULL,
   `ab-` double DEFAULT NULL,
   `ab+` double DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
+CREATE DATABASE webdb;
+USE webdb;
 --
 -- Dumping data for table `v2`
 --
@@ -134,7 +138,7 @@ DROP TABLE IF EXISTS `v3_annual`;
 CREATE TABLE `v3_annual` (
   `year` tinytext,
   `mean` double DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -157,7 +161,7 @@ DROP TABLE IF EXISTS `v3_monthly`;
 CREATE TABLE `v3_monthly` (
   `year` tinytext,
   `mean` double DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -180,7 +184,7 @@ DROP TABLE IF EXISTS `v5`;
 CREATE TABLE `v5` (
   `year` mediumtext,
   `co2` double DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
