@@ -44,7 +44,9 @@ export default function Login() {
       <div className="divp">
         <h2 className="active"> Login </h2>
         <h2 className="inactive underlineHover">
-          <a href="/register">Register</a>
+          <a className="alink" href="/register">
+            Register
+          </a>
         </h2>
       </div>
       <div className="input-container">

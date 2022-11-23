@@ -79,10 +79,10 @@ export function V1Chart() {
       },
 
       y: {
-        min: -2,
-        max: 2,
-        ticks: {
-          stepSize: 0.3,
+        type: "linear",
+        title: {
+          display: true,
+          text: "Temperature (°C)",
         },
       },
     },
@@ -97,6 +97,47 @@ export function V1Chart() {
         <button onClick={() => setBoolean2(!boolean2)}>
           {boolean2 ? "Hide v2" : "Add v2"}
         </button>
+      </div>
+      <div>
+        <h4>Description</h4>
+        <p>Global historical surface temperature anomalie???????</p>
+      </div>
+      <div>
+        <h4>Source</h4>
+        <div>
+          <a>v1:</a>
+          &nbsp;&nbsp;
+          <a
+            className="achart"
+            href="https://www.metoffice.gov.uk/hadobs/hadcrut5/"
+          >
+            Description
+          </a>
+          &nbsp;&nbsp;
+          <a
+            className="achart"
+            href="https://www.metoffice.gov.uk/hadobs/hadcrut5/data/current/download.html"
+          >
+            Dataset
+          </a>
+        </div>
+        <div>
+          <a>v2:</a>
+          &nbsp;&nbsp;
+          <a
+            className="achart"
+            href="https://bolin.su.se/data/moberg-2012-nh-1?n=moberg-2005"
+          >
+            Description
+          </a>
+          &nbsp;&nbsp;
+          <a
+            className="achart"
+            href="https://www.ncei.noaa.gov/pub/data/paleo/contributions_by_author/moberg2005/nhtemp-moberg2005.txt"
+          >
+            Dataset
+          </a>
+        </div>
       </div>
     </>
   );
