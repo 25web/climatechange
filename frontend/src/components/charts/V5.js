@@ -2,7 +2,7 @@ import { GetChart } from "./GetChart";
 import { Line } from "react-chartjs-2";
 import { Chart as ChartJS } from "chart.js/auto";
 import { useEffect, useState } from "react";
-import "../../css/chart.scss";
+// import "../../css/chart.scss";
 import "chartjs-adapter-luxon";
 
 export function V5Chart() {
@@ -35,9 +35,23 @@ export function V5Chart() {
     plugins: {},
     scales: {
       x: {
+        title: {
+          display: true,
+          text: "Mean age of  the air (years)",
+        },
         type: "linear",
         min: 2342,
         max: 417160,
+      },
+      y: {
+        type: "linear",
+        title: {
+          display: true,
+          text: "CO2 concentration (ppm)",
+          font: {
+            size: 10,
+          },
+        },
       },
     },
   };
@@ -46,6 +60,26 @@ export function V5Chart() {
     <>
       <div>
         <Line data={data} options={options} />
+      </div>
+      <div>
+        <h4>Description</h4>
+        <p>
+          Line graph of atmospheric carbon dioxide concentrations based on ice
+          drilling conducted at Vostok station in the Soviet Antarctic. Time
+          period ~400000 years.
+        </p>
+      </div>
+      <div>
+        <div className="inner">
+          <a href="https://cdiac.ess-dive.lbl.gov/trends/co2/vostok.html">
+            Description
+          </a>
+        </div>
+        <div className="inner">
+          <a href="https://cdiac.ess-dive.lbl.gov/ftp/trends/co2/vostok.icecore.co2">
+            Dataset
+          </a>
+        </div>
       </div>
     </>
   );
