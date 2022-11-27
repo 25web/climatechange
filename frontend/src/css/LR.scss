@@ -163,40 +163,18 @@ h2.active {
 .btn {
   padding: 6px 26px;
   font-size: 16px;
-  border: none;
-  outline: none;
+  border: 2px solid $medium-gray;
   position: relative;
-  z-index: 1;
+  color: $medium-gray;
   border-radius: 30px;
-  background: $gradient;
+  background: $gray;
   cursor: pointer;
 }
-.btn::before {
-  content: "";
-  position: absolute;
-  left: 1px;
-  right: 1px;
-  top: 1px;
-  bottom: 1px;
-  border-radius: 29px;
-  background-color: lighten($gray, 5%);
-  z-index: -1;
-  transition: 200ms;
-}
-.btn::after {
-  content: attr(data);
-  font-size: 16px;
-  background: $gradient;
-  background-clip: text;
-  color: transparent;
-  transition: 200ms;
-}
-.btn:hover::before {
-  opacity: 50%;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
+
+.btn:hover {
+  // background: $medium-gray;
+  color: lighten($medium-gray, 10%);
+  border: 2px solid lighten($medium-gray, 10%);
 }
 
 .pmessage {

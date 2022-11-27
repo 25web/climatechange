@@ -92,7 +92,9 @@ export default function Register() {
         <p>{message}</p>
       </div>
       <div className="container">
-        <button onClick={register} className="btn" data="Register"></button>
+        <button onClick={register} className="btn">
+          Register
+        </button>
       </div>
     </div>
   );

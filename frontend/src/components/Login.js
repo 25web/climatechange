@@ -72,7 +72,9 @@ export default function Login() {
         <p>{message}</p>
       </div>
       <div className="container">
-        <button onClick={login} className="btn" data="Login"></button>
+        <button onClick={login} className="btn">
+          Login
+        </button>
       </div>
     </div>
   );
