@@ -1,6 +1,10 @@
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
+/*import NotFound from "./components/NotFound";*/
+import Home from "./components/Home";
+import { GetChart } from "./components/charts/GetChart";
 import { Routes, Route } from "react-router-dom";
 import { V1Chart } from "./components/charts/V1";
 import { V5Chart } from "./components/charts/V5";
@@ -15,6 +19,7 @@ import Delete from "./components/Delete";
 function App() {
   return (
     <>
+      <Navbar />
       <div className="main">
         <Routes>
           <Route path="/login" element={<Login />} />
@@ -28,6 +33,8 @@ function App() {
           <Route path="/chart/v8" element={<V8Chart />} />
           <Route path="/delete" element={<Delete />} />
           <Route path="/N1" element={<N1 />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
       <div className="footer">
