@@ -9,7 +9,7 @@
 ## Installation
 
 * Clone the project `git clone https://github.com/25web/climatechange`
-* run `npm ci` in frontend/ and backend/ folders. -- FIXME
+* run `npm ci` in frontend/ and backend/ folders.
 
 ### .env
 
@@ -25,11 +25,9 @@
 
 * Import project database
   ```
-  mysql -u {USER} -p < webdb.sql
+  mysql -u {USER} -p < docs/webdb.sql
   ```
 ### Launch the environment
 
-* Run `FIXME`
-
----
+* Run `npm start` in frontend/ and backend/ folders.
 
