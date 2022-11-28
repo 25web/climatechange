@@ -16,6 +16,20 @@ const getV1monthly = (req, res) => {
   });
 };
 
+const getV6 = (req, res) => {
+  chartModel.getV6((err, result) => {
+    if (err) {
+      console.log(err);
+      return res.status(500).json({ message: "Internal server error." });
+    }
+    if (result.length === 0) {
+      return res.status(400).json({ message: "No data found." });
+    }
+    return res.status(200).json(result);
+  });
+};
+
 module.exports = {
   getV1monthly,
+  getV6,
 };
