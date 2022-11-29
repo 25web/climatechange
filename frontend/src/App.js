@@ -19,7 +19,7 @@ function App() {
         <Route path="/chart" element={<V1Chart />} />
         <Route path="/delete" element={<Delete />} />
         <Route path= "/home" element={<Home/>} />
-        <Route path="*" element={<NotFound />} /> 
+        {/* <Route path="*" element={<NotFound />} />  */}
       </Routes>
     </div>
     </>
