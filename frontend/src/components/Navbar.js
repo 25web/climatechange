@@ -1,23 +1,25 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import "../css/custom.scss";
 
-export default function Navbar() {
-        return (
-          <nav class="navbar navbar-expand  " aria-label="Second navbar example">
-          <div class="container-fluid">
-            <Link class="navbar-brand" to="/">Home</Link>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-      
-            <div class="collapse navbar-collapse" id="navbarsExample02">
-              <ul class="navbar-nav me-auto">
-                <li class="nav-item">
-                  <Link class="nav-link" to="/login">Login</Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-        );
-      }
+export default function navbar() {
+  return (
+    <Navbar fixed="top" className="color-nav" variant="dark">
+      <Nav className="mr-auto">
+
+        <Nav.Link as={Link} to="/home">
+          Home
+        </Nav.Link>
+        <Nav.Link as={Link} to="/login">
+          Login
+        </Nav.Link>
+        <Nav.Link as={Link} to="/register">
+          Register
+        </Nav.Link>
+      </Nav>
+      <br />
+    </Navbar>
+  );
+}
