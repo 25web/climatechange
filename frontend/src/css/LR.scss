@@ -1,5 +1,5 @@
 // $gray: #27282d;
-$gray: #282c34;
+$gray: #3e4555;
 $medium-gray: lighten(#27282d, 25%);
 $light-gray: lighten(#27282d, 65%);
 $gradient: linear-gradient(
@@ -12,8 +12,8 @@ $gradient: linear-gradient(
 );
 
 body {
-  // background-image: $gradient;
-  background-color: lighten($gray, 6%);
+  //background-image: $gradient;
+  background-color: rgb(59, 223, 245);
   height: 100vh;
   overflow: hidden;
   display: flex;
@@ -121,7 +121,7 @@ h2 {
   text-transform: uppercase;
   display: inline-block;
   margin: 40px 8px 10px 8px;
-  color: #cccccc;
+  color: #fafafa;
 }
 
 h2.inactive {
@@ -219,16 +219,6 @@ h2.active {
   margin: -20px 8px 0px 8px;
 }
 
-.nav {
-  margin-bottom: 0!important;
-  
-}
-
-.container {
-  margin-top: 50px;
-}
-
 footer .container {
   margin-top: 0;
 }
-
