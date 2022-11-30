@@ -18,6 +18,7 @@
 --
 -- Table structure for table `users`
 --
+
 CREATE DATABASE webdb;
 USE webdb;
 
@@ -106,7 +107,7 @@ DROP TABLE IF EXISTS `v2`;
 CREATE TABLE `v2` (
   `year` tinytext,
   `t` double DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -129,7 +130,7 @@ DROP TABLE IF EXISTS `v3_annual`;
 CREATE TABLE `v3_annual` (
   `year` tinytext,
   `mean` double DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -152,7 +153,7 @@ DROP TABLE IF EXISTS `v3_monthly`;
 CREATE TABLE `v3_monthly` (
   `year` tinytext,
   `mean` double DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -184,54 +185,8 @@ CREATE TABLE `v4` (
 
 LOCK TABLES `v4` WRITE;
 /*!40000 ALTER TABLE `v4` DISABLE KEYS */;
-INSERT INTO `v4` VALUES ('1969',323.2),('1968',323.7),('1965',319.5),('1965',318.8),('1963',318.2),('1962',318.7),('1962',317),('1962',319.4),('1962',317),('1953',311.9),('1953',311),('1953',312.7),('1944',309.7),('1939',311),('1938',310.5),('1932',307.8),('1924',304.8),('1924',304.1),('1915',301.3),('1912',300.7),('1905',296.9),('1905',298.5),('1898',294.7),('1892',294.6),('1886',293.7),('1882',291.9),('1877',288.8),('1869',287.4),('1861',286.6),('1854',284.9),('1850',285.2);
+INSERT INTO `v4` VALUES ('1969',323.2),('1968',323.7),('1965',319.5),('1965',318.8),('1963',318.2),('1962',318.7),('1962',317),('1962',319.4),('1962',317),('1953',311.9),('1953',311),('1953',312.7),('1944',309.7),('1939',311),('1938',310.5),('1932',307.8),('1924',304.8),('1924',304.1),('1915',301.3),('1912',300.7),('1905',296.9),('1905',298.5),('1898',294.7),('1892',294.6),('1886',293.7),('1882',291.9),('1877',288.8),('1869',287.4),('1861',286.6),('1854',284.9),('1850',285.2),('1959',315.7),('1954',313.6),('1954',314.7),('1954',314.1),('1948',311.4),('1939',309.2),('1936',307.9),('1929',305.2),('1926',305),('1905',299),('1899',296.5),('1891',294.7),('1845',286.1),('1825',285.1),('1796',283.7),('1794',281.6),('1777',279.5),('1760',276.7),('1749',277.2),('1747',276.9),('1720',277.5),('1692',276.5),('1679',275.9),('1647',277.2),('1604',274.3),('1589',278.7),('1570',281.9),('1547',282.8),('1527',283.2),('1499',282.4),('1465',279.6),('1446',281.7),('1387',280),('1387',280.4),('1327',283.4),('1246',281.7),('1196',283.9),('1146',283.8),('1096',282.4),('1046',280.3),('1006',279.4),('1978',335.2),('1978',332),('1975',331.2),('1973',328.1),('1971',324.1),('1970',325.2),('1970',324.7),('1948',309.9),('1940',310.5),('1934',309.2),('1832',284.5);
 /*!40000 ALTER TABLE `v4` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `v4_2`
---
-
-DROP TABLE IF EXISTS `v4_2`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `v4_2` (
-  `year` mediumtext,
-  `co2` double DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `v4_2`
---
-
-LOCK TABLES `v4_2` WRITE;
-/*!40000 ALTER TABLE `v4_2` DISABLE KEYS */;
-INSERT INTO `v4_2` VALUES ('1978',335.2),('1978',332),('1975',331.2),('1973',328.1),('1971',324.1),('1970',325.2),('1970',324.7),('1948',309.9),('1940',310.5),('1934',309.2),('1832',284.5);
-/*!40000 ALTER TABLE `v4_2` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `v4_3`
---
-
-DROP TABLE IF EXISTS `v4_3`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `v4_3` (
-  `year` mediumtext,
-  `co2` double DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `v4_3`
---
-
-LOCK TABLES `v4_3` WRITE;
-/*!40000 ALTER TABLE `v4_3` DISABLE KEYS */;
-INSERT INTO `v4_3` VALUES ('1959',315.7),('1954',313.6),('1954',314.7),('1954',314.1),('1948',311.4),('1939',309.2),('1936',307.9),('1929',305.2),('1926',305),('1905',299),('1899',296.5),('1891',294.7),('1845',286.1),('1825',285.1),('1796',283.7),('1794',281.6),('1777',279.5),('1760',276.7),('1749',277.2),('1747',276.9),('1720',277.5),('1692',276.5),('1679',275.9),('1647',277.2),('1604',274.3),('1589',278.7),('1570',281.9),('1547',282.8),('1527',283.2),('1499',282.4),('1465',279.6),('1446',281.7),('1387',280),('1387',280.4),('1327',283.4),('1246',281.7),('1196',283.9),('1146',283.8),('1096',282.4),('1046',280.3),('1006',279.4);
-/*!40000 ALTER TABLE `v4_3` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -364,4 +319,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-30 18:27:10
+-- Dump completed on 2022-11-30 20:12:34
