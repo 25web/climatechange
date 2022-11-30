@@ -33,10 +33,9 @@ export function V6Chart() {
     responsive: true,
     scales: {
       x: {
-        type: "linear",
-        ticks: {
-          stepSize: 50000,
-        },
+        // type: "linear",
+        // type: "time",
+        reverse: true,
         time: {
           unit: "year",
         },
