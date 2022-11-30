@@ -33,8 +33,6 @@ export function V6Chart() {
     responsive: true,
     scales: {
       x: {
-        // type: "linear",
-        // type: "time",
         reverse: true,
         time: {
           unit: "year",
