@@ -13,6 +13,9 @@ const chart = {
       callback
     );
   },
+  getV6: function (callback) {
+    return db.query("SELECT * FROM v6;", callback);
+  },
 };
 
 module.exports = chart;

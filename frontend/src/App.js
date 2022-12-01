@@ -4,6 +4,9 @@ import { GetChart } from "./components/charts/GetChart";
 import { Routes, Route } from "react-router-dom";
 import { V1Chart } from "./components/charts/V1";
 import { V3Chart } from "./components/charts/V3";
+import { V6Chart } from "./components/charts/V6";
+import Delete from "./components/Delete";
+
 function App() {
   return (
     <div>
@@ -12,6 +15,8 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/chart/v1" element={<V1Chart />} />
         <Route path="/chart/v3" element={<V3Chart />} />
+        <Route path="/chart/v6" element={<V6Chart />} />
+        <Route path="/delete" element={<Delete />} />
       </Routes>
     </div>
   );
