@@ -69,12 +69,18 @@ export function V6Chart() {
       <div>
         <h4>Source</h4>
         <div className="inner">
-          <a href="https://www.ncei.noaa.gov/access/paleo-search/study/17975">
+          <a
+            className="alink"
+            href="https://www.ncei.noaa.gov/access/paleo-search/study/17975"
+          >
             Description
           </a>
         </div>
         <div className="inner">
-          <a href="https://www.ncei.noaa.gov/pub/data/paleo/icecore/antarctica/antarctica2015co2composite.txt">
+          <a
+            className="alink"
+            href="https://www.ncei.noaa.gov/pub/data/paleo/icecore/antarctica/antarctica2015co2composite.txt"
+          >
             Dataset
           </a>
         </div>

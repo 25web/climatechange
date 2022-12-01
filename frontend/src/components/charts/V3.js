@@ -21,10 +21,10 @@ export function V3Chart() {
   let data = {
     datasets: [
       {
-        label: "mean",
+        label: boolean ? "Monthly CO2 measurements" : "Annual CO2 measurements",
         data: boolean ? monthly : annual,
-        borderColor: "rgb(4, 255, 46)",
-        backgroundColor: "rgb(4, 255, 46)",
+        borderColor: boolean ? "rgb(4, 226, 255)" : "rgb(4, 255, 46)",
+        backgroundColor: boolean ? "rgb(4, 255, 255)" : "rgb(4, 226, 46)",
         parsing: {
           xAxisKey: "year",
           yAxisKey: "mean",
@@ -42,6 +42,12 @@ export function V3Chart() {
           unit: boolean ? "year" : "month",
         },
       },
+      y: {
+        title: {
+          display: true,
+          text: "°C",
+        },
+      },
     },
   };
 
@@ -52,6 +58,29 @@ export function V3Chart() {
         <button onClick={() => setBoolean(!boolean)}>
           {boolean ? "annual" : "monthly"}
         </button>
+      </div>
+      <div>
+        <h4>Description</h4>
+        <p>
+          Atmospheric CO2 concentrations from Mauna Loa measurements starting
+          1958
+        </p>
+      </div>
+      <div>
+        <h4>Source</h4>
+        <div className="inner">
+          <a
+            className="alink"
+            href="https://gml.noaa.gov/ccgg/about/co2_measurements.html"
+          >
+            Description
+          </a>
+        </div>
+        <div className="inner">
+          <a className="alink" href="https://gml.noaa.gov/ccgg/trends/">
+            Dataset
+          </a>
+        </div>
       </div>
     </>
   );

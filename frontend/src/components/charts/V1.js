@@ -108,14 +108,14 @@ export function V1Chart() {
           <a>v1:</a>
           &nbsp;&nbsp;
           <a
-            className="achart"
+            className="alink"
             href="https://www.metoffice.gov.uk/hadobs/hadcrut5/"
           >
             Description
           </a>
           &nbsp;&nbsp;
           <a
-            className="achart"
+            className="alink"
             href="https://www.metoffice.gov.uk/hadobs/hadcrut5/data/current/download.html"
           >
             Dataset
@@ -125,14 +125,14 @@ export function V1Chart() {
           <a>v2:</a>
           &nbsp;&nbsp;
           <a
-            className="achart"
+            className="alink"
             href="https://bolin.su.se/data/moberg-2012-nh-1?n=moberg-2005"
           >
             Description
           </a>
           &nbsp;&nbsp;
           <a
-            className="achart"
+            className="alink"
             href="https://www.ncei.noaa.gov/pub/data/paleo/contributions_by_author/moberg2005/nhtemp-moberg2005.txt"
           >
             Dataset

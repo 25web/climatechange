@@ -11,9 +11,11 @@ $gradient: linear-gradient(
 );
 
 .chart-wrapper {
-  width: 1000px;
+  width: 60vw;
+  margin: auto;
+  position: relative;
 }
 
-.achart {
+.alink {
   color: $medium-gray;
 }
