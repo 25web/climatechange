@@ -5,35 +5,53 @@ import { useEffect, useState } from "react";
 import "../../css/chart.scss";
 import "chartjs-adapter-luxon";
 
-export function V6Chart() {
+export function V7Chart() {
   const [v6, setV6] = useState([]);
+  const [v7, setV7] = useState([]);
 
   useEffect(() => {
-    GetChart("/chart/v6", (res) => {
-      setV6(res.data);
+    GetChart("/chart/v7", (res) => {
+      setV6(res.data.resV6);
+      setV7(res.data.resV7);
     });
   }, []);
 
   let data = {
     datasets: [
       {
-        label: "Ice core 800k year composite study CO2 measurements ",
-        data: v6,
+        label:
+          "Evolution of global temperature over the past two million years",
+        data: v7,
         borderColor: "rgb(4, 226, 255)",
         backgroundColor: "rgb(4, 226, 255)",
         parsing: {
           xAxisKey: "year",
+          yAxisKey: "change",
+        },
+        yAxisID: "y",
+        pointRadius: 0,
+      },
+      {
+        label: "Ice core 800k year composite study CO2 measurements",
+        data: v6,
+        borderColor: "rgb(4, 255, 46)",
+        backgroundColor: "rgb(4, 255, 46)",
+        parsing: {
+          xAxisKey: "year",
           yAxisKey: "co2",
         },
+        yAxisID: "y1",
         pointRadius: 0,
       },
     ],
   };
   let optionsYear = {
-    responsive: true,
     scales: {
       x: {
-        reverse: true,
+        ticks: {
+          stepSize: 50000,
+        },
+        type: "linear",
         time: {
           unit: "year",
         },
@@ -48,6 +66,14 @@ export function V6Chart() {
           text: "CO2 ppm",
         },
       },
+      y1: {
+        type: "linear",
+        position: "right",
+        title: {
+          display: true,
+          text: "Change",
+        },
+      },
     },
   };
   return (
@@ -57,22 +83,16 @@ export function V6Chart() {
       </div>
       <div>
         <h4>Description</h4>
-        <p>
-          The European Project for Ice Coring in Antarctica Dome ice core from
-          Dome C (EDC) has allowed for the reconstruction of atmospheric CO2
-          concentrations for the last 800,000 years
-        </p>
+        <p>Evolution of global temperature over the past two million years</p>
       </div>
       <div>
         <h4>Source</h4>
         <div className="inner">
-          <a href="https://www.ncei.noaa.gov/access/paleo-search/study/17975">
-            Description
-          </a>
+          <a href="http://carolynsnyder.com/publications.php">Dataset</a>
         </div>
         <div className="inner">
-          <a href="https://www.ncei.noaa.gov/pub/data/paleo/icecore/antarctica/antarctica2015co2composite.txt">
-            Dataset
+          <a href="https://climate.fas.harvard.edu/files/climate/files/snyder_2016.pdf">
+            Description
           </a>
         </div>
       </div>
@@ -80,4 +100,4 @@ export function V6Chart() {
   );
 }
 
-export default V6Chart;
+export default V7Chart;

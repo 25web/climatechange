@@ -10,6 +10,9 @@ const chart = {
   getV6: function (callback) {
     return db.query("SELECT * FROM v6;", callback);
   },
+  getV7: function (callback) {
+    return db.query("SELECT * FROM v7; SELECT * FROM v6;", callback);
+  },
 };
 
 module.exports = chart;

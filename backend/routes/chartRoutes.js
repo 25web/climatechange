@@ -5,5 +5,6 @@ const chartController = require("../controllers/chartController");
 
 router.get("/v1", chartController.getV1monthly);
 router.get("/v6", chartController.getV6);
+router.get("/v7", chartController.getV7);
 
 module.exports = router;
