@@ -5,25 +5,29 @@ import { useEffect, useState } from "react";
 import "../../css/chart.scss";
 import "chartjs-adapter-luxon";
 
-export function V6Chart() {
-  const [v6, setV6] = useState([]);
+export function V3Chart() {
+  const [monthly, setMonthly] = useState([]);
+  const [annual, setAnnual] = useState([]);
+  const [boolean, setBoolean] = useState(false);
 
+  console.log("/chart/v3");
   useEffect(() => {
-    GetChart("/chart/v6", (res) => {
-      setV6(res.data);
+    GetChart("/chart/v3", (res) => {
+      setMonthly(res.data.resMonthly);
+      setAnnual(res.data.resAnnual);
     });
   }, []);
 
   let data = {
     datasets: [
       {
-        label: "Ice core 800k year composite study CO2 measurements ",
-        data: v6,
-        borderColor: "rgb(4, 226, 255)",
-        backgroundColor: "rgb(4, 226, 255)",
+        label: boolean ? "Monthly CO2 measurements" : "Annual CO2 measurements",
+        data: boolean ? monthly : annual,
+        borderColor: boolean ? "rgb(4, 226, 255)" : "rgb(4, 255, 46)",
+        backgroundColor: boolean ? "rgb(4, 255, 255)" : "rgb(4, 226, 46)",
         parsing: {
           xAxisKey: "year",
-          yAxisKey: "co2",
+          yAxisKey: "mean",
         },
         pointRadius: 0,
       },
@@ -33,34 +37,33 @@ export function V6Chart() {
     responsive: true,
     scales: {
       x: {
-        reverse: true,
+        type: "time",
         time: {
-          unit: "year",
-        },
-        title: {
-          display: true,
-          text: "Year",
+          unit: boolean ? "year" : "month",
         },
       },
       y: {
         title: {
           display: true,
-          text: "CO2 ppm",
+          text: "°C",
         },
       },
     },
   };
+
   return (
     <>
       <div className="chart-wrapper">
         <Line options={optionsYear} data={data} />
+        <button onClick={() => setBoolean(!boolean)}>
+          {boolean ? "annual" : "monthly"}
+        </button>
       </div>
       <div>
         <h4>Description</h4>
         <p>
-          The European Project for Ice Coring in Antarctica Dome ice core from
-          Dome C (EDC) has allowed for the reconstruction of atmospheric CO2
-          concentrations for the last 800,000 years
+          Atmospheric CO2 concentrations from Mauna Loa measurements starting
+          1958
         </p>
       </div>
       <div>
@@ -68,16 +71,13 @@ export function V6Chart() {
         <div className="inner">
           <a
             className="alink"
-            href="https://www.ncei.noaa.gov/access/paleo-search/study/17975"
+            href="https://gml.noaa.gov/ccgg/about/co2_measurements.html"
           >
             Description
           </a>
         </div>
         <div className="inner">
-          <a
-            className="alink"
-            href="https://www.ncei.noaa.gov/pub/data/paleo/icecore/antarctica/antarctica2015co2composite.txt"
-          >
+          <a className="alink" href="https://gml.noaa.gov/ccgg/trends/">
             Dataset
           </a>
         </div>
@@ -86,4 +86,4 @@ export function V6Chart() {
   );
 }
 
-export default V6Chart;
+export default V3Chart;
