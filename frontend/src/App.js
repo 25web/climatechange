@@ -6,6 +6,7 @@ import { V1Chart } from "./components/charts/V1";
 import { V3Chart } from "./components/charts/V3";
 import { V6Chart } from "./components/charts/V6";
 import { V7Chart } from "./components/charts/V7";
+import { V8Chart } from "./components/charts/V8";
 import Delete from "./components/Delete";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/chart/v3" element={<V3Chart />} />
         <Route path="/chart/v6" element={<V6Chart />} />
         <Route path="/chart/v7" element={<V7Chart />} />
+        <Route path="/chart/v8" element={<V8Chart />} />
         <Route path="/delete" element={<Delete />} />
       </Routes>
     </div>
