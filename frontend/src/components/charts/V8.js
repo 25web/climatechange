@@ -47,7 +47,6 @@ export function V8Chart() {
   };
 
   const optionsYear = {
-    responsive: true,
     plugins: {
       legend: {
         display: boolean ? false : true,
@@ -58,8 +57,6 @@ export function V8Chart() {
         },
       },
     },
-
-    responsive: false,
     scales: {
       x: {
         title: {
@@ -70,7 +67,6 @@ export function V8Chart() {
           },
         },
       },
-
       y: {
         stacked: true,
         type: "linear",

@@ -30,6 +30,18 @@ describe("test chart", function () {
         done();
       });
   });
+  it("test chart v7", function (done) {
+    chai
+      .request(url)
+      .get("/chart/v7")
+      .end(function (err, res) {
+        expect(res).to.have.status(200);
+        expect("Content-Type", /json/);
+        expect(res.body).to.have.property("resV7");
+        expect(res.body).to.have.property("resV6");
+        done();
+      });
+  });
   it("test chart v8", function (done) {
     chai
       .request(url)

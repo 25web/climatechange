@@ -88,10 +88,15 @@ export function V7Chart() {
       <div>
         <h4>Source</h4>
         <div className="inner">
-          <a href="http://carolynsnyder.com/publications.php">Dataset</a>
+          <a className="alink" href="http://carolynsnyder.com/publications.php">
+            Dataset
+          </a>
         </div>
         <div className="inner">
-          <a href="https://climate.fas.harvard.edu/files/climate/files/snyder_2016.pdf">
+          <a
+            className="alink"
+            href="https://climate.fas.harvard.edu/files/climate/files/snyder_2016.pdf"
+          >
             Description
           </a>
         </div>
