@@ -20,6 +20,14 @@ const user = {
       callback
     );
   },
+
+  delete: function (username, callback) {
+    return db.query(
+      "DELETE FROM users WHERE username = ?",
+      [username],
+      callback
+    );
+  },
 };
 
 module.exports = user;

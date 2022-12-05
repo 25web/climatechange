@@ -1,5 +1,23 @@
+$gray: #282c34;
+$medium-gray: lighten(#27282d, 25%);
+$light-gray: lighten(#27282d, 65%);
+$gradient: linear-gradient(
+  to right top,
+  #58dbff,
+  #00bbff,
+  #0097ff,
+  #006cff,
+  #122feb
+);
+
 .chart-wrapper {
-  width: 1000px;
+  width: 60vw;
+  margin: auto;
+  position: relative;
+}
+
+.alink {
+  color: $medium-gray;
 }
 
 .inner {
