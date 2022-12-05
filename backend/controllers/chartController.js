@@ -31,6 +31,19 @@ const getV3 = (req, res) => {
   });
 };
 
+const getV5 = (req, res) => {
+  chartModel.getV5((err, result) => {
+    if (err) {
+      console.log(err);
+      return res.status(500).json({ message: "Internal server error." });
+    }
+    if (result.length === 0) {
+      return res.status(400).json({ message: "No data found." });
+    }
+    return res.status(200).json(result);
+  });
+};
+
 const getV6 = (req, res) => {
   chartModel.getV6((err, result) => {
     if (err) {
@@ -60,6 +73,7 @@ const getV7 = (req, res) => {
 module.exports = {
   getV1,
   getV3,
+  getV5,
   getV6,
   getV7,
 };
