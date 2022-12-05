@@ -70,10 +70,49 @@ const getV7 = (req, res) => {
   });
 };
 
+const getV8 = (req, res) => {
+  chartModel.getV8((err, result) => {
+    if (err) {
+      console.log(err);
+      return res.status(500).json({ message: "Internal server error." });
+    }
+    if (result.length === 0) {
+      return res.status(400).json({ message: "No data found." });
+    }
+
+    let countrys = result[0];
+    let finalVersio = [];
+    let countryAndData = [];
+    let temporaryVersio = {};
+    let finalResult = {};
+
+    const countryNames = Object.keys(countrys[0]);
+
+    countryNames.forEach((country) => {
+      temporaryVersio[country] = [];
+      countrys.forEach((res) => {
+        temporaryVersio[country].push(res[country]);
+      });
+      countryAndData.push([country, result[result.length - 1][country]]);
+    });
+
+    countryAndData.forEach((item) => {
+      finalVersio.push(item[0]);
+    });
+
+    finalVersio.reverse();
+    finalVersio.forEach((country) => {
+      finalResult[country] = temporaryVersio[country];
+    });
+
+    return res.status(200).json({ resV8: finalResult, resV8year: result[1] });
+  });
+};
 module.exports = {
   getV1,
   getV3,
   getV5,
   getV6,
   getV7,
+  getV8,
 };
