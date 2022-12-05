@@ -2,7 +2,7 @@ import { GetChart } from "./GetChart";
 import { Line } from "react-chartjs-2";
 import { Chart as ChartJS } from "chart.js/auto";
 import { useEffect, useState } from "react";
-// import "../../css/chart.scss";
+import "../../css/chart.scss";
 import "chartjs-adapter-luxon";
 
 export function V5Chart() {
@@ -58,8 +58,8 @@ export function V5Chart() {
 
   return (
     <>
-      <div>
-        <Line data={data} options={options} />
+      <div className="chart-wrapper">
+        <Line options={options} data={data} />
       </div>
       <div>
         <h4>Description</h4>
@@ -70,13 +70,20 @@ export function V5Chart() {
         </p>
       </div>
       <div>
+        <h4>Source</h4>
         <div className="inner">
-          <a href="https://cdiac.ess-dive.lbl.gov/trends/co2/vostok.html">
+          <a
+            className="alink"
+            href="https://cdiac.ess-dive.lbl.gov/trends/co2/vostok.html"
+          >
             Description
           </a>
         </div>
         <div className="inner">
-          <a href="https://cdiac.ess-dive.lbl.gov/ftp/trends/co2/vostok.icecore.co2">
+          <a
+            className="alink"
+            href="https://cdiac.ess-dive.lbl.gov/ftp/trends/co2/vostok.icecore.co2"
+          >
             Dataset
           </a>
         </div>

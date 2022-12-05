@@ -33,7 +33,7 @@ const getV3 = (req, res) => {
 
 const getV5 = (req, res) => {
   chartModel.getV5((err, result) => {
-  if (err) {
+    if (err) {
       console.log(err);
       return res.status(500).json({ message: "Internal server error." });
     }
