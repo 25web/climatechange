@@ -20,6 +20,16 @@ describe("test chart", function () {
         done();
       });
   });
+  it("test chart v5", function (done) {
+    chai
+      .request(url)
+      .get("/chart/v5")
+      .end(function (err, res) {
+        expect(res).to.have.status(200);
+        expect("Content-Type", /json/);
+        done();
+      });
+  });
   it("test chart v6", function (done) {
     chai
       .request(url)
