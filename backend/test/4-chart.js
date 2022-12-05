@@ -30,4 +30,16 @@ describe("test chart", function () {
         done();
       });
   });
+  it("test chart v8", function (done) {
+    chai
+      .request(url)
+      .get("/chart/v8")
+      .end(function (err, res) {
+        expect(res).to.have.status(200);
+        expect("Content-Type", /json/);
+        expect(res.body).to.have.property("resV8");
+        expect(res.body).to.have.property("resV8year");
+        done();
+      });
+  });
 });
