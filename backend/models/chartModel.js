@@ -7,6 +7,9 @@ const chart = {
       callback
     );
   },
+  getV5: function (callback) {
+    return db.query("SELECT * FROM v5", callback);
+     },
   getV3: function (callback) {
     return db.query(
       "SELECT * FROM v3_monthly; SELECT * FROM v3_annual;",
