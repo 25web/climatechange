@@ -55,7 +55,7 @@ DROP TABLE IF EXISTS `v10`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `v10` (
   `year` mediumtext,
-  `evenr` mediumtext
+  `event` mediumtext
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
