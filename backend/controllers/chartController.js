@@ -83,16 +83,16 @@ const getV7 = (req, res) => {
       return res.status(400).json({ message: "No data found." });
     }
 
-    let test = result[2];
+    let yline = result[2];
 
-    test.forEach((item) => {
+    yline.forEach((item) => {
       item["val"] = "2";
     });
 
     return res.status(200).json({
       resV7: result[0],
       resV6: result[1],
-      resV10: test,
+      resV10: yline,
     });
   });
 };
