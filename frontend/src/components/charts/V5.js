@@ -61,31 +61,33 @@ export function V5Chart() {
       <div className="chart-wrapper">
         <Line options={options} data={data} />
       </div>
-      <div>
-        <h4>Description</h4>
-        <p>
-          Line graph of atmospheric carbon dioxide concentrations based on ice
-          drilling conducted at Vostok station in the Soviet Antarctic. Time
-          period ~400000 years.
-        </p>
-      </div>
-      <div>
-        <h4>Source</h4>
-        <div className="inner">
-          <a
-            className="alink"
-            href="https://cdiac.ess-dive.lbl.gov/trends/co2/vostok.html"
-          >
-            Description
-          </a>
+      <div className="chart-wrapper">
+        <div>
+          <h4>Description</h4>
+          <p>
+            Line graph of atmospheric carbon dioxide concentrations based on ice
+            drilling conducted at Vostok station in the Soviet Antarctic. Time
+            period ~400000 years.
+          </p>
         </div>
-        <div className="inner">
-          <a
-            className="alink"
-            href="https://cdiac.ess-dive.lbl.gov/ftp/trends/co2/vostok.icecore.co2"
-          >
-            Dataset
-          </a>
+        <div>
+          <h4>Source</h4>
+          <div className="inner">
+            <a
+              className="alink"
+              href="https://cdiac.ess-dive.lbl.gov/trends/co2/vostok.html"
+            >
+              Description
+            </a>
+          </div>
+          <div className="inner">
+            <a
+              className="alink"
+              href="https://cdiac.ess-dive.lbl.gov/ftp/trends/co2/vostok.icecore.co2"
+            >
+              Dataset
+            </a>
+          </div>
         </div>
       </div>
     </>
