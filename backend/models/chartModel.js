@@ -12,7 +12,7 @@ const chart = {
   },
   getV4: function (callback) {
     return db.query(
-      "SELECT * FROM v4; SELECT * FROM v4_2; SELECT * FROM v4_3; SELECT * FROM v3_annual;",
+      "SELECT * FROM v4; SELECT * FROM v4_2; SELECT * FROM v4_3; SELECT * FROM v3_annual; SELECT * FROM v10 WHERE year>1000;",
       callback
     );
   },

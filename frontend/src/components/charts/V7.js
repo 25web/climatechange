@@ -48,7 +48,7 @@ export function V7Chart() {
         pointRadius: 0,
       },
       {
-        label: "asd",
+        label: "Human Evolution and Activities",
         data: v10,
         borderColor: "rgb(255, 4, 234)",
         backgroundColor: "rgb(255, 4, 234)",
@@ -69,7 +69,7 @@ export function V7Chart() {
         callbacks: {
           label: function (context) {
             let label = context.dataset.label || "";
-            if (context.dataset.label === "asd") {
+            if (context.dataset.label === "Human Evolution and Activities") {
               label = context.raw.event;
             }
             return label;

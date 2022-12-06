@@ -10,6 +10,7 @@ export function V4Chart() {
   const [v4_2, setV42] = useState([]);
   const [v4_3, setV43] = useState([]);
   const [v3, setV3] = useState([]);
+  const [v10, setV10] = useState([]);
   const [boolean, setBoolean] = useState(false);
 
   useEffect(() => {
@@ -18,6 +19,7 @@ export function V4Chart() {
       setV42(res.data.resV42);
       setV43(res.data.resV43);
       setV3(res.data.resV3);
+      setV10(res.data.resV10);
     });
   }, []);
 
@@ -59,6 +61,19 @@ export function V4Chart() {
         pointRadius: 0,
       },
       {
+        label: "Human Evolution and Activities",
+        data: v10,
+        borderColor: "rgb(4, 255, 46)",
+        backgroundColor: "rgb(4, 255, 46)",
+        hidden: false,
+        showLine: false,
+        parsing: {
+          xAxisKey: "year",
+          yAxisKey: "val",
+        },
+        pointRadius: 3,
+      },
+      {
         label: boolean ? "co2 mean" : "",
         data: boolean ? v3 : [],
         borderColor: boolean ? "rgb(255,100, 0)" : "rgb(255, 4, 234, 0)",
@@ -73,6 +88,19 @@ export function V4Chart() {
   };
   let optionsYear = {
     responsive: true,
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: function (context) {
+            let label = context.dataset.label || "";
+            if (context.dataset.label === "Human Evolution and Activities") {
+              label = context.raw.event;
+            }
+            return label;
+          },
+        },
+      },
+    },
     scales: {
       x: {
         type: "linear",
