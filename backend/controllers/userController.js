@@ -66,8 +66,26 @@ const getAllUsers = (req, res) => {
   return res.status(200).json({ message: "Return all users." });
 };
 
+const deleteUser = (req, res) => {
+  const { username } = req.body;
+  if (!username) {
+    return res.status(400).json({ message: "Please enter username." });
+  }
+  user.delete(username, (err, result) => {
+    if (err) {
+      console.log(err);
+      return res.status(500).json({ message: "Internal server error." });
+    }
+    if (result.affectedRows === 0) {
+      return res.status(400).json({ message: "User not found." });
+    }
+    return res.status(200).json({ message: "User deleted successfully." });
+  });
+};
+
 module.exports = {
   register,
   getAllUsers,
   login,
+  deleteUser,
 };

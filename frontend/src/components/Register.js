@@ -46,7 +46,9 @@ export default function Register() {
       <div className="divp">
         <h2 className="active"> Register </h2>
         <h2 className="inactive underlineHover">
-          <a href="/login">Login</a>
+          <a className="alink" href="/login">
+            Login
+          </a>
         </h2>
       </div>
       <div className="input-container-two">
