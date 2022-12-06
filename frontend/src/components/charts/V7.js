@@ -81,24 +81,29 @@ export function V7Chart() {
       <div className="chart-wrapper">
         <Line options={optionsYear} data={data} />
       </div>
-      <div>
-        <h4>Description</h4>
-        <p>Evolution of global temperature over the past two million years</p>
-      </div>
-      <div>
-        <h4>Source</h4>
-        <div className="inner">
-          <a className="alink" href="http://carolynsnyder.com/publications.php">
-            Dataset
-          </a>
+      <div className="chart-wrapper">
+        <div>
+          <h4>Description</h4>
+          <p>Evolution of global temperature over the past two million years</p>
         </div>
-        <div className="inner">
-          <a
-            className="alink"
-            href="https://climate.fas.harvard.edu/files/climate/files/snyder_2016.pdf"
-          >
-            Description
-          </a>
+        <div>
+          <h4>Source</h4>
+          <div className="inner">
+            <a
+              className="alink"
+              href="http://carolynsnyder.com/publications.php"
+            >
+              Dataset
+            </a>
+          </div>
+          <div className="inner">
+            <a
+              className="alink"
+              href="https://climate.fas.harvard.edu/files/climate/files/snyder_2016.pdf"
+            >
+              Description
+            </a>
+          </div>
         </div>
       </div>
     </>
