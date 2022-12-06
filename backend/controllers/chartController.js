@@ -82,7 +82,18 @@ const getV7 = (req, res) => {
     if (result.length === 0) {
       return res.status(400).json({ message: "No data found." });
     }
-    return res.status(200).json({ resV7: result[0], resV6: result[1] });
+
+    let test = result[2];
+
+    test.forEach((item) => {
+      item["val"] = "2";
+    });
+
+    return res.status(200).json({
+      resV7: result[0],
+      resV6: result[1],
+      resV10: test,
+    });
   });
 };
 
