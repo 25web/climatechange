@@ -46,8 +46,16 @@ export function V8Chart() {
     }),
   };
 
-  const optionsYear = {
+  const options = {
     plugins: {
+      title: {
+        display: true,
+        text: "CO2 emissions by country",
+        color: "rgb(0, 0, 7)",
+        font: {
+          size: 17,
+        },
+      },
       legend: {
         display: boolean ? false : true,
         labels: {
@@ -83,32 +91,34 @@ export function V8Chart() {
 
   return (
     <>
-      <div className="chart-wrapper">
-        <Line options={optionsYear} data={data} />
-        <button onClick={() => setBoolean(!boolean)}>Toggle labels</button>
-      </div>
-      <div className="chart-wrapper">
-        <div>
-          <h4>Description</h4>
-          <p>CO2 emissions by country</p>
+      <div className="space">
+        <div className="chart-wrapper">
+          <Line options={options} data={data} />
+          <button onClick={() => setBoolean(!boolean)}>Toggle labels</button>
         </div>
-        <div>
-          <h4>Source</h4>
-          <div className="inner">
-            <a
-              className="alink"
-              href="https://essd.copernicus.org/articles/14/1917/2022/"
-            >
-              Description
-            </a>
+        <div className="chart-wrapper">
+          <div>
+            <h4>Description</h4>
+            <p>CO2 emissions by country</p>
           </div>
-          <div className="inner">
-            <a
-              className="alink"
-              href="https://data.icos-cp.eu/licence_accept?ids=%5B%22lApekzcmd4DRC34oGXQqOxbJ%22%5D"
-            >
-              Dataset
-            </a>
+          <div>
+            <h4>Source</h4>
+            <div className="inner">
+              <a
+                className="alink"
+                href="https://essd.copernicus.org/articles/14/1917/2022/"
+              >
+                Description
+              </a>
+            </div>
+            <div className="inner">
+              <a
+                className="alink"
+                href="https://data.icos-cp.eu/licence_accept?ids=%5B%22lApekzcmd4DRC34oGXQqOxbJ%22%5D"
+              >
+                Dataset
+              </a>
+            </div>
           </div>
         </div>
       </div>

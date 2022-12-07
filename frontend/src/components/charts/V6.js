@@ -29,8 +29,18 @@ export function V6Chart() {
       },
     ],
   };
-  let optionsYear = {
+  let options = {
     responsive: true,
+    plugins: {
+      title: {
+        display: true,
+        text: "Ice core 800k year composite study CO2 measurements",
+        color: "rgb(0, 0, 7)",
+        font: {
+          size: 17,
+        },
+      },
+    },
     scales: {
       x: {
         reverse: true,
@@ -52,35 +62,37 @@ export function V6Chart() {
   };
   return (
     <>
-      <div className="chart-wrapper">
-        <Line options={optionsYear} data={data} />
-      </div>
-      <div className="chart-wrapper">
-        <div>
-          <h4>Description</h4>
-          <p>
-            The European Project for Ice Coring in Antarctica Dome ice core from
-            Dome C (EDC) has allowed for the reconstruction of atmospheric CO2
-            concentrations for the last 800,000 years
-          </p>
+      <div className="space">
+        <div className="chart-wrapper">
+          <Line options={options} data={data} />
         </div>
-        <div>
-          <h4>Source</h4>
-          <div className="inner">
-            <a
-              className="alink"
-              href="https://www.ncei.noaa.gov/access/paleo-search/study/17975"
-            >
-              Description
-            </a>
+        <div className="chart-wrapper">
+          <div>
+            <h4>Description</h4>
+            <p>
+              The European Project for Ice Coring in Antarctica Dome ice core
+              from Dome C (EDC) has allowed for the reconstruction of
+              atmospheric CO2 concentrations for the last 800,000 years
+            </p>
           </div>
-          <div className="inner">
-            <a
-              className="alink"
-              href="https://www.ncei.noaa.gov/pub/data/paleo/icecore/antarctica/antarctica2015co2composite.txt"
-            >
-              Dataset
-            </a>
+          <div>
+            <h4>Source</h4>
+            <div className="inner">
+              <a
+                className="alink"
+                href="https://www.ncei.noaa.gov/access/paleo-search/study/17975"
+              >
+                Description
+              </a>
+            </div>
+            <div className="inner">
+              <a
+                className="alink"
+                href="https://www.ncei.noaa.gov/pub/data/paleo/icecore/antarctica/antarctica2015co2composite.txt"
+              >
+                Dataset
+              </a>
+            </div>
           </div>
         </div>
       </div>

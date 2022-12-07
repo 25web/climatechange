@@ -71,8 +71,18 @@ export function V4Chart() {
       },
     ],
   };
-  let optionsYear = {
+  let options = {
     responsive: true,
+    plugins: {
+      title: {
+        display: true,
+        text: "Antarctic Ice Core records of atmospheric CO2 ratios combined with Mauna Loa measurements",
+        color: "rgb(0, 0, 7)",
+        font: {
+          size: 17,
+        },
+      },
+    },
     scales: {
       x: {
         type: "linear",
@@ -82,52 +92,54 @@ export function V4Chart() {
 
   return (
     <>
-      <div className="chart-wrapper">
-        <Line options={optionsYear} data={data} />
-        <button onClick={() => setBoolean(!boolean)}>
-          {boolean ? "Show less" : "Show Mauna Loa Co2 data"}
-        </button>
-      </div>
-      <div className="chart-wrapper">
-        <div>
-          <h4>Description</h4>
-          <p>
-            Antarctic Ice Core records of atmospheric CO2 ratios combined with
-            Mauna Loa measurements
-          </p>
+      <div className="space">
+        <div className="chart-wrapper">
+          <Line options={options} data={data} />
+          <button className="sbtn" onClick={() => setBoolean(!boolean)}>
+            {boolean ? "Show less" : "Show Mauna Loa Co2 data"}
+          </button>
         </div>
-        <div>
-          <h4>Source</h4>
+        <div className="chart-wrapper">
           <div>
-            <a>v4:</a>
-            &nbsp;&nbsp;
-            <a
-              className="alink"
-              href="https://cdiac.ess-dive.lbl.gov/trends/co2/lawdome.html"
-            >
-              Description
-            </a>
-            &nbsp;&nbsp;
-            <a
-              className="alink"
-              href="https://cdiac.ess-dive.lbl.gov/ftp/trends/co2/lawdome.combined.dat"
-            >
-              Dataset
-            </a>
+            <h4>Description</h4>
+            <p>
+              Antarctic Ice Core records of atmospheric CO2 ratios combined with
+              Mauna Loa measurements
+            </p>
           </div>
           <div>
-            <a>v3:</a>
-            &nbsp;&nbsp;
-            <a className="alink" href="https://gml.noaa.gov/ccgg/trends/">
-              Description
-            </a>
-            &nbsp;&nbsp;
-            <a
-              className="alink"
-              href="https://gml.noaa.gov/ccgg/trends/data.html"
-            >
-              Dataset
-            </a>
+            <h4>Source</h4>
+            <div>
+              <a>v4:</a>
+              &nbsp;&nbsp;
+              <a
+                className="alink"
+                href="https://cdiac.ess-dive.lbl.gov/trends/co2/lawdome.html"
+              >
+                Description
+              </a>
+              &nbsp;&nbsp;
+              <a
+                className="alink"
+                href="https://cdiac.ess-dive.lbl.gov/ftp/trends/co2/lawdome.combined.dat"
+              >
+                Dataset
+              </a>
+            </div>
+            <div>
+              <a>v3:</a>
+              &nbsp;&nbsp;
+              <a className="alink" href="https://gml.noaa.gov/ccgg/trends/">
+                Description
+              </a>
+              &nbsp;&nbsp;
+              <a
+                className="alink"
+                href="https://gml.noaa.gov/ccgg/trends/data.html"
+              >
+                Dataset
+              </a>
+            </div>
           </div>
         </div>
       </div>

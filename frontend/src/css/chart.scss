@@ -11,11 +11,30 @@ $gradient: linear-gradient(
 );
 
 .chart-wrapper {
-  width: 60vw;
+  @media (max-width: 1350px) {
+    width: 70vw;
+  }
   margin: auto;
   position: relative;
 }
 
 .alink {
   color: $medium-gray;
+}
+
+@media (min-width: 1350px) {
+  .space {
+    width: 90%;
+    float: left;
+    margin-left: 5%;
+  }
+
+  .block {
+    width: 50%;
+    display: inline-block;
+  }
+}
+
+.mbottom {
+  margin-bottom: 60px;
 }
