@@ -8,11 +8,15 @@ import "chartjs-adapter-luxon";
 export function V7Chart() {
   const [v6, setV6] = useState([]);
   const [v7, setV7] = useState([]);
+  const [v10, setV10] = useState([]);
+  const [elements, setElements] = useState([]);
 
   useEffect(() => {
     GetChart("/chart/v7", (res) => {
       setV6(res.data.resV6);
       setV7(res.data.resV7);
+      setV10(res.data.resV10);
+      setElements(res.data);
     });
   }, []);
 
@@ -43,11 +47,36 @@ export function V7Chart() {
         yAxisID: "y1",
         pointRadius: 0,
       },
+      {
+        label: "Human Evolution and Activities",
+        data: v10,
+        borderColor: "rgb(255, 4, 234)",
+        backgroundColor: "rgb(255, 4, 234)",
+        hidden: false,
+        showLine: false,
+        parsing: {
+          xAxisKey: "year",
+          yAxisKey: "val",
+        },
+        pointRadius: 3,
+      },
     ],
   };
+  
   let options = {
     responsive: true,
     plugins: {
+      tooltip: {
+        callbacks: {
+          label: function (context) {
+            let label = context.dataset.label || "";
+            if (context.dataset.label === "Human Evolution and Activities") {
+              label = context.raw.event;
+            }
+            return label;
+          },
+        },
+      },
       title: {
         display: true,
         text: "Evolution of global temperature over the past two million years",

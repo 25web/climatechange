@@ -39,11 +39,17 @@ const getV4 = (req, res) => {
     if (result.length === 0) {
       return res.status(400).json({ message: "No data found." });
     }
+    let yline = result[4];
+
+    yline.forEach((item) => {
+      item["val"] = "330";
+    });
     return res.status(200).json({
       resV41: result[0],
       resV42: result[1],
       resV43: result[2],
       resV3: result[3],
+      resV10: yline,
     });
   });
 };
@@ -82,7 +88,18 @@ const getV7 = (req, res) => {
     if (result.length === 0) {
       return res.status(400).json({ message: "No data found." });
     }
-    return res.status(200).json({ resV7: result[0], resV6: result[1] });
+
+    let yline = result[2];
+
+    yline.forEach((item) => {
+      item["val"] = "2";
+    });
+
+    return res.status(200).json({
+      resV7: result[0],
+      resV6: result[1],
+      resV10: yline,
+    });
   });
 };
 
