@@ -95,6 +95,8 @@ export function V4Chart() {
         color: "rgb(0, 0, 7)",
         font: {
           size: 17,
+        },
+      },
       tooltip: {
         callbacks: {
           label: function (context) {
