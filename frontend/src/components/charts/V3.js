@@ -59,27 +59,29 @@ export function V3Chart() {
           {boolean ? "annual" : "monthly"}
         </button>
       </div>
-      <div>
-        <h4>Description</h4>
-        <p>
-          Atmospheric CO2 concentrations from Mauna Loa measurements starting
-          1958
-        </p>
-      </div>
-      <div>
-        <h4>Source</h4>
-        <div className="inner">
-          <a
-            className="alink"
-            href="https://gml.noaa.gov/ccgg/about/co2_measurements.html"
-          >
-            Description
-          </a>
+      <div className="chart-wrapper">
+        <div>
+          <h4>Description</h4>
+          <p>
+            Atmospheric CO2 concentrations from Mauna Loa measurements starting
+            1958
+          </p>
         </div>
-        <div className="inner">
-          <a className="alink" href="https://gml.noaa.gov/ccgg/trends/">
-            Dataset
-          </a>
+        <div>
+          <h4>Source</h4>
+          <div className="inner">
+            <a
+              className="alink"
+              href="https://gml.noaa.gov/ccgg/about/co2_measurements.html"
+            >
+              Description
+            </a>
+          </div>
+          <div className="inner">
+            <a className="alink" href="https://gml.noaa.gov/ccgg/trends/">
+              Dataset
+            </a>
+          </div>
         </div>
       </div>
     </>
