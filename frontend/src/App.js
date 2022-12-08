@@ -36,7 +36,6 @@ function App() {
               </Auth>
             }
           />
-          {/* <Route path="/N1" element={<N1 />} /> */}
         </Routes>
       </div>
       <div className="footer">

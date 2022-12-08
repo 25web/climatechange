@@ -10,14 +10,7 @@ const Auth = ({ children }) => {
     else setTokenIsValid(true);
   };
   useEffect(() => {
-    // AuthGet("/user/token", (res) => {
     checkStorage("token");
-    // if (res.status === 200) {
-    //   setTokenIsValid(true);
-    // } else if (res.response.status === 400) {
-    //   setTokenIsValid(false);
-    // }
-    // });
   }, []);
 
   if (!tokenIsValid) {
