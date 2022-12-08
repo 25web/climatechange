@@ -13,7 +13,7 @@ $gradient: linear-gradient(
 
 body {
   //background-image: $gradient;
-  background-color: rgb(59, 223, 245);
+  background-color: $gray;
   height: 100vh;
   overflow: hidden;
   display: flex;

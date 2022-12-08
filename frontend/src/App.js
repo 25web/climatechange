@@ -8,6 +8,8 @@ import { Routes, Route } from "react-router-dom";
 import { V1Chart } from "./components/charts/V1";
 import { V6Chart } from "./components/charts/V6";
 import Delete from "./components/Delete";
+import N1 from "./components/N1";
+import N2 from "./components/N2";
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
         <Route path="/delete" element={<Delete />} />
         <Route path= "/home" element={<Home/>} />
         {/* <Route path="*" element={<NotFound />} />  */}
+        <Route path="/N1" element={<N1 />} />
+        <Route path="/N2" element={<N2 />} />
       </Routes>
     </div>
     </>
