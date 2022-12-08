@@ -15,6 +15,8 @@ import { V7Chart } from "./components/charts/V7";
 import { V8Chart } from "./components/charts/V8";
 import N1 from "./components/N1";
 import Delete from "./components/Delete";
+import N1 from "./components/N1";
+import N2 from "./components/N2";
 
 function App() {
   return (
@@ -35,6 +37,7 @@ function App() {
           <Route path="/N1" element={<N1 />} />
           <Route path="/home" element={<Home />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="/N2" element={<N2 />} />
         </Routes>
       </div>
       <div className="footer">
