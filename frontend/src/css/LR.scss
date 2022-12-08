@@ -176,6 +176,22 @@ h2.active {
   color: lighten($medium-gray, 10%);
   border: 2px solid lighten($medium-gray, 10%);
 }
+.sbtn {
+  padding: 1.5px 10px;
+  font-size: 14px;
+  border: 2px solid $medium-gray;
+  position: relative;
+  color: $medium-gray;
+  border-radius: 30px;
+  background: $gray;
+  cursor: pointer;
+}
+
+.sbtn:hover {
+  // background: $medium-gray;
+  color: lighten($medium-gray, 10%);
+  border: 2px solid lighten($medium-gray, 10%);
+}
 
 .pmessage {
   background: $gradient;
