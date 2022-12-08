@@ -9,24 +9,27 @@ import "../css/chart.scss";
 export default function N1() {
   return (
     <>
-      <div className="mbottom">
-        <div className="block">
-          <V1 />
-        </div>
-        <div className="block">
-          <V3 />
-        </div>
-        <div className="block">
-          <V4 />
-        </div>
-        <div className="block">
-          <V5 />
-        </div>
-        <div className="block">
-          <V6 />
-        </div>
-        <div className="block">
-          <V7 />
+      <div className="center">
+        <h2 className="h1">Temperature data and co2 concentrations</h2>
+        <div className="mbottom">
+          <div className="block">
+            <V1 />
+          </div>
+          <div className="block">
+            <V3 />
+          </div>
+          <div className="block">
+            <V4 />
+          </div>
+          <div className="block">
+            <V5 />
+          </div>
+          <div className="block">
+            <V6 />
+          </div>
+          <div className="block">
+            <V7 />
+          </div>
         </div>
       </div>
     </>
