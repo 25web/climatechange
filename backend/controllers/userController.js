@@ -82,10 +82,14 @@ const deleteUser = (req, res) => {
     return res.status(200).json({ message: "User deleted successfully." });
   });
 };
+const checkToken = (req, res) => {
+  res.status(200).json({ msg: "Token is valid" });
+};
 
 module.exports = {
   register,
   getAllUsers,
   login,
   deleteUser,
+  checkToken,
 };

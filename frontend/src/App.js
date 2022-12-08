@@ -10,6 +10,7 @@ import { V6Chart } from "./components/charts/V6";
 import { V7Chart } from "./components/charts/V7";
 import { V8Chart } from "./components/charts/V8";
 import N1 from "./components/N1";
+import Auth from "./components/Auth";
 import Delete from "./components/Delete";
 
 function App() {
@@ -27,7 +28,15 @@ function App() {
           <Route path="/chart/v7" element={<V7Chart />} />
           <Route path="/chart/v8" element={<V8Chart />} />
           <Route path="/delete" element={<Delete />} />
-          <Route path="/N1" element={<N1 />} />
+          <Route
+            path="/N1"
+            element={
+              <Auth>
+                <N1 />
+              </Auth>
+            }
+          />
+          {/* <Route path="/N1" element={<N1 />} /> */}
         </Routes>
       </div>
       <div className="footer">
