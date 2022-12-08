@@ -34,6 +34,12 @@ const chart = {
   getV8: function (callback) {
     return db.query("SELECT * FROM v8; SELECT * FROM v8_year", callback);
   },
+  getV9: function (callback) {
+    return db.query(
+      "SELECT * FROM v9; SELECT * FROM v9_energy; SELECT * FROM v9_land; SELECT * FROM v9_processes; SELECT * FROM v9_waste;",
+      callback
+    );
+  },
 };
 
 module.exports = chart;

@@ -141,6 +141,42 @@ const getV8 = (req, res) => {
     return res.status(200).json({ resV8: finalResult, resV8year: result[1] });
   });
 };
+const getV9 = (req, res) => {
+  chartModel.getV9((err, result) => {
+    if (err) {
+      console.log(err);
+      return res.status(500).json({ message: "Internal server error." });
+    }
+    if (result.length === 0) {
+      return res.status(400).json({ message: "No data found." });
+    }
+    let resultWhitColor = result[0];
+
+    resultWhitColor.forEach((item) => {
+      const color = Math.floor(Math.random() * 255);
+      const color1 = Math.floor(Math.random() * 255);
+      const color2 = Math.floor(Math.random() * 255);
+      const fullColor = (
+        "rgb(" +
+        color +
+        "," +
+        color1 +
+        "," +
+        color2 +
+        ")"
+      ).toString();
+      item["color"] = fullColor;
+    });
+    return res.status(200).json({
+      resV9: resultWhitColor,
+      resV9energy: result[1],
+      resV9land: result[2],
+      resV9processes: result[3],
+      resV9waste: result[4],
+    });
+  });
+};
+
 module.exports = {
   getV1,
   getV3,
@@ -149,4 +185,5 @@ module.exports = {
   getV6,
   getV7,
   getV8,
+  getV9,
 };
