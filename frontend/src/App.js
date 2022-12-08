@@ -1,4 +1,5 @@
 import Login from "./components/Login";
+import Logout from "./components/Logout";
 import Register from "./components/Register";
 import Footer from "./components/Footer";
 import { Routes, Route } from "react-router-dom";
@@ -16,6 +17,9 @@ import Delete from "./components/Delete";
 function App() {
   return (
     <>
+      <div>
+        <Logout />
+      </div>
       <div className="main">
         <Routes>
           <Route path="/login" element={<Login />} />
