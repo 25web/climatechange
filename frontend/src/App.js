@@ -2,9 +2,7 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
-/*import NotFound from "./components/NotFound";*/
 import Home from "./components/Home";
-import { GetChart } from "./components/charts/GetChart";
 import { Routes, Route } from "react-router-dom";
 import { V1Chart } from "./components/charts/V1";
 import { V5Chart } from "./components/charts/V5";
@@ -15,8 +13,6 @@ import { V7Chart } from "./components/charts/V7";
 import { V8Chart } from "./components/charts/V8";
 import N1 from "./components/N1";
 import Delete from "./components/Delete";
-import N1 from "./components/N1";
-import N2 from "./components/N2";
 
 function App() {
   return (
