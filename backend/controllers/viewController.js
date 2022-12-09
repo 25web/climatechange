@@ -3,7 +3,7 @@ const jwt = require("../config/jwt");
 const shortid = require("shortid");
 
 const getView = (req, res) => {
-  viewModel.getView(req.params.url, (err, result) => {
+  viewModel.get(req.params.url, (err, result) => {
     if (err) {
       console.log(err);
       return res.status(500).json({ message: "Internal server error." });
