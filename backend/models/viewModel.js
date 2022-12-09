@@ -12,6 +12,9 @@ const view = {
       callback
     );
   },
+  all: function (callback) {
+    return db.query("SELECT * FROM views", callback);
+  },
 };
 
 module.exports = view;
