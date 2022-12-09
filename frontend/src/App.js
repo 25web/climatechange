@@ -11,33 +11,39 @@ import { V4Chart } from "./components/charts/V4";
 import { V6Chart } from "./components/charts/V6";
 import { V7Chart } from "./components/charts/V7";
 import { V8Chart } from "./components/charts/V8";
+import NotFound from "./components/NotFound";
+import N2 from "./components/N2";
 import N1 from "./components/N1";
 import Delete from "./components/Delete";
 
 function App() {
   return (
     <>
-      <Navbar />
-      <div className="main">
-        <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/chart/v1" element={<V1Chart />} />
-          <Route path="/chart/v3" element={<V3Chart />} />
-          <Route path="/chart/v4" element={<V4Chart />} />
-          <Route path="/chart/v5" element={<V5Chart />} />
-          <Route path="/chart/v6" element={<V6Chart />} />
-          <Route path="/chart/v7" element={<V7Chart />} />
-          <Route path="/chart/v8" element={<V8Chart />} />
-          <Route path="/delete" element={<Delete />} />
-          <Route path="/N1" element={<N1 />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="*" element={<NotFound />} />
-          <Route path="/N2" element={<N2 />} />
-        </Routes>
-      </div>
-      <div className="footer">
-        <Footer />
+      <div className="all">
+        <div className="header">
+          <Navbar />
+        </div>
+        <div className="main">
+          <Routes>
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/chart/v1" element={<V1Chart />} />
+            <Route path="/chart/v3" element={<V3Chart />} />
+            <Route path="/chart/v4" element={<V4Chart />} />
+            <Route path="/chart/v5" element={<V5Chart />} />
+            <Route path="/chart/v6" element={<V6Chart />} />
+            <Route path="/chart/v7" element={<V7Chart />} />
+            <Route path="/chart/v8" element={<V8Chart />} />
+            <Route path="/delete" element={<Delete />} />
+            <Route path="/N1" element={<N1 />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="*" element={<NotFound />} />
+            <Route path="/N2" element={<N2 />} />
+          </Routes>
+        </div>
+        <div className="footer">
+          <Footer />
+        </div>
       </div>
     </>
   );

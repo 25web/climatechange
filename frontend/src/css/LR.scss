@@ -13,9 +13,9 @@ $gradient: linear-gradient(
 .login-App {
   padding-bottom: 10px;
   background: $gray;
-  // height: 340px;
+  height: 340px;
   width: 520px;
-  margin: 75px auto;
+  margin: auto;
   border-radius: 5px;
   box-shadow: 0px 4px 30px -5px rgba(0, 0, 0, 0.65);
   display: flex;
@@ -27,12 +27,17 @@ $gradient: linear-gradient(
   background: $gray;
   height: 420px;
   width: 520px;
-  margin: 75px auto;
+  margin: auto;
   border-radius: 5px;
   box-shadow: 0px 4px 30px -5px rgba(0, 0, 0, 0.65);
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+}
+.container {
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 .input-container {
@@ -160,18 +165,18 @@ h2.active {
   -webkit-text-fill-color: transparent;
 }
 
-.btn {
+.btnn {
   padding: 6px 26px;
   font-size: 16px;
   border: 2px solid $medium-gray;
+  // margin: 0;
   position: relative;
   color: $medium-gray;
   border-radius: 30px;
   background: $gray;
-  cursor: pointer;
 }
 
-.btn:hover {
+.btnn:hover {
   // background: $medium-gray;
   color: lighten($medium-gray, 10%);
   border: 2px solid lighten($medium-gray, 10%);
@@ -184,7 +189,6 @@ h2.active {
   color: $medium-gray;
   border-radius: 30px;
   background: $gray;
-  cursor: pointer;
 }
 
 .sbtn:hover {
@@ -204,4 +208,8 @@ h2.active {
 
 footer .container {
   margin-top: 0;
+}
+
+.test {
+  width: 1000px;
 }

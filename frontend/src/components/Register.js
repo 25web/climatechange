@@ -2,6 +2,7 @@ import "../css/LR.scss";
 import React, { useState } from "react";
 import axios from "../axios";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Register() {
   const [fname, setFname] = useState("");
@@ -46,9 +47,10 @@ export default function Register() {
       <div className="divp">
         <h2 className="active"> Register </h2>
         <h2 className="inactive underlineHover">
-          <a className="alink" href="/login">
-            Login
-          </a>
+          <Link className="alink" to="/login">
+            {" "}
+            Login{" "}
+          </Link>
         </h2>
       </div>
       <div className="input-container-two">
@@ -94,7 +96,7 @@ export default function Register() {
         <p>{message}</p>
       </div>
       <div className="container">
-        <button onClick={register} className="btn">
+        <button onClick={register} className="btnn">
           Register
         </button>
       </div>

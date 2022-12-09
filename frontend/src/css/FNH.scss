@@ -9,6 +9,10 @@ $gradient: linear-gradient(
   #006cff,
   #122feb
 );
+.color-nav {
+  background-color: $gray;
+  position: top;
+}
 
 footer {
   left: 0;
@@ -28,10 +32,16 @@ footer a {
   margin: 0;
   text-decoration: underline;
 }
-footer div.col {
-  width: 20%;
+footer div.colll {
+  // width: 20%;
   display: inline-block;
   vertical-align: top;
+}
+footer div.colll {
+  // width: 20%;
+  display: inline-block;
+  vertical-align: top;
+  float: left;
 }
 
 footer ul li a:hover {

@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer>
       <div class="container clearfix">
-        <div class="col" id="col-2">
+        <div class="coll" id="col-2">
           <ul>
             <li>ABOUT</li>
             <li>
@@ -13,7 +13,7 @@ export default function Footer() {
             </li>
           </ul>
         </div>
-        <div class="col" id="col-3">
+        <div class="coll" id="col-3">
           <ul>
             <li>ASDASD</li>
             <li>

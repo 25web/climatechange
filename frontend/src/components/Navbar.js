@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import "../css/custom.scss";
+import "../css/FNH.scss";
 import Dropdown from "react-bootstrap/Dropdown";
 
 function navbar() {
@@ -21,7 +21,7 @@ function navbar() {
           </Dropdown.Toggle>
 
           <Dropdown.Menu>
-            <Dropdown.Item href="/chart/v6">test</Dropdown.Item>
+            <Dropdown.Item href="/n1">N1</Dropdown.Item>
             <Dropdown.Item href="/chart">test2</Dropdown.Item>
             <Dropdown.Item href="#/action-3">test3</Dropdown.Item>
           </Dropdown.Menu>
