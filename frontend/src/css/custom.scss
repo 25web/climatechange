@@ -1,4 +1,4 @@
-// $gray: #27282d;
+//$gray: #27282d;
 $gray: #3e4555;
 $medium-gray: lighten(#27282d, 25%);
 $light-gray: lighten(#27282d, 65%);
@@ -12,7 +12,7 @@ $gradient: linear-gradient(
 );
 
 .color-nav {
-  // background-color: rgb(176, 22, 190);
   background-color: $gray;
   position: top;
 }
+
