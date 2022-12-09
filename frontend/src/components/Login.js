@@ -49,9 +49,6 @@ export default function Login() {
             {" "}
             Register{" "}
           </Link>
-          {/* <a className="alink" href="/register">
-            Register
-          </a> */}
         </h2>
       </div>
       <div className="input-container">
