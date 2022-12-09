@@ -129,9 +129,7 @@ DROP TABLE IF EXISTS `v2`;
 CREATE TABLE `v2` (
   `year` tinytext,
   `t` double DEFAULT NULL
-
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -156,9 +154,7 @@ DROP TABLE IF EXISTS `v3_annual`;
 CREATE TABLE `v3_annual` (
   `year` tinytext,
   `mean` double DEFAULT NULL
-
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -181,9 +177,7 @@ DROP TABLE IF EXISTS `v3_monthly`;
 CREATE TABLE `v3_monthly` (
   `year` tinytext,
   `mean` double DEFAULT NULL
-
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -277,9 +271,7 @@ DROP TABLE IF EXISTS `v5`;
 CREATE TABLE `v5` (
   `year` mediumtext,
   `co2` double DEFAULT NULL
-
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -302,9 +294,7 @@ DROP TABLE IF EXISTS `v6`;
 CREATE TABLE `v6` (
   `year` mediumtext,
   `co2` double DEFAULT NULL
-
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -329,9 +319,7 @@ DROP TABLE IF EXISTS `v7`;
 CREATE TABLE `v7` (
   `year` mediumtext,
   `change` double DEFAULT NULL
-
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -598,9 +586,7 @@ DROP TABLE IF EXISTS `v9`;
 CREATE TABLE `v9` (
   `sector` mediumtext,
   `emission_share` double DEFAULT NULL
-
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -662,13 +648,13 @@ DROP TABLE IF EXISTS `views`;
 CREATE TABLE `views` (
   `view_ID` int NOT NULL AUTO_INCREMENT,
   `url` varchar(45) NOT NULL,
-  `charts` json NOT NULL,
+  `charts` varchar(255) NOT NULL,
   `user_ID` int NOT NULL,
   PRIMARY KEY (`view_ID`),
   UNIQUE KEY `url_UNIQUE` (`url`),
   UNIQUE KEY `view_ID_UNIQUE` (`view_ID`),
   KEY `fk_views_users_idx` (`user_ID`),
-  CONSTRAINT `fk_views_users` FOREIGN KEY (`user_ID`) REFERENCES `users` (`user_ID`)
+  FOREIGN KEY (`user_ID`) REFERENCES `users` (`user_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
