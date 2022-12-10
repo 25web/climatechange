@@ -80,9 +80,7 @@ export function V6Chart() {
             <div className="inner">
               <a
                 className="alink"
-                href="https://www.ncei.noaa.gov/access/paleo-search/study/17975"
-              >
-                Description
+                href="https://www.ncei.noaa.gov/access/paleo-search/study/17975">
               </a>
             </div>
             <div className="inner">

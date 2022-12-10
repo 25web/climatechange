@@ -106,9 +106,7 @@ export function V8Chart() {
             <div className="inner">
               <a
                 className="alink"
-                href="https://essd.copernicus.org/articles/14/1917/2022/"
-              >
-                Description
+                href="https://essd.copernicus.org/articles/14/1917/2022/" >
               </a>
             </div>
             <div className="inner">

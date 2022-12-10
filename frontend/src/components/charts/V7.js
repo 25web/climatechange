@@ -126,7 +126,7 @@ export function V7Chart() {
           <div>
             <h4>Description</h4>
             <p>
-              Evolution of global temperature over the past two million years
+              Evolution of global temperature over the past two million years.
             </p>
           </div>
           <div>
@@ -144,7 +144,6 @@ export function V7Chart() {
                 className="alink"
                 href="https://climate.fas.harvard.edu/files/climate/files/snyder_2016.pdf"
               >
-                Description
               </a>
             </div>
           </div>

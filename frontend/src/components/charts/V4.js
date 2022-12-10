@@ -129,14 +129,14 @@ export function V4Chart() {
           <div>
             <h4>Description</h4>
             <p>
-              Antarctic Ice Core records of atmospheric CO2 ratios combined with
-              Mauna Loa measurements
+              Antarctic Ice Core records of atmospheric CO2 ratios presented here are derived from three ice cores obtained at Law Dome, East Antarctica from 1987 to 1993 combined with
+              Mauna Loa measurements.
             </p>
           </div>
           <div>
             <h4>Source</h4>
             <div>
-              <a>v4:</a>
+              <a>V4 Antarctic Ice Core records of atmospheric CO2 ratios combined with Mauna Loa measurement:</a>
               &nbsp;&nbsp;
               <a
                 className="alink"
@@ -153,10 +153,9 @@ export function V4Chart() {
               </a>
             </div>
             <div>
-              <a>v3:</a>
+              <a>V3 Atmospheric CO2 concentrations from Mauna Loa measurements starting 195:</a>
               &nbsp;&nbsp;
               <a className="alink" href="https://gml.noaa.gov/ccgg/trends/">
-                Description
               </a>
               &nbsp;&nbsp;
               <a

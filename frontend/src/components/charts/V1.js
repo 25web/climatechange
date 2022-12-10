@@ -112,7 +112,7 @@ export function V1Chart() {
         <div className="chart-wrapper">
           <div>
             <h4>Description</h4>
-            <p>Global historical surface temperature anomalie???????</p>
+            <p>Global historical surface temperature anomalies from January 1850 onwards and optional V2 data.</p>
           </div>
           <div>
             <h4>Source</h4>
@@ -134,7 +134,7 @@ export function V1Chart() {
               </a>
             </div>
             <div>
-              <a>v2:</a>
+              <a>V2 Northern Hemisphere 2,000-year temperature reconstruction:</a>
               &nbsp;&nbsp;
               <a
                 className="alink"
