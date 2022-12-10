@@ -1,4 +1,5 @@
 import Login from "./components/Login";
+import Logout from "./components/Logout";
 import Register from "./components/Register";
 import Footer from "./components/Footer";
 import { Routes, Route } from "react-router-dom";
@@ -10,11 +11,32 @@ import { V6Chart } from "./components/charts/V6";
 import { V7Chart } from "./components/charts/V7";
 import { V8Chart } from "./components/charts/V8";
 import N1 from "./components/N1";
+import Auth from "./components/Auth";
 import Delete from "./components/Delete";
+import React, { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    //timer to logout user after 10 seconds(for testing) of inactivity
+    let timer;
+    const reset = () => {
+      if (localStorage.getItem("token")) {
+        clearInterval(timer);
+        timer = setInterval(() => {
+          localStorage.clear();
+          window.location.href = "/login";
+        }, 10000);
+      }
+    };
+    document.onkeydown = reset;
+    document.onmousemove = reset;
+  }, []);
+
   return (
     <>
+      <div>
+        <Logout />
+      </div>
       <div className="main">
         <Routes>
           <Route path="/login" element={<Login />} />
@@ -26,8 +48,22 @@ function App() {
           <Route path="/chart/v6" element={<V6Chart />} />
           <Route path="/chart/v7" element={<V7Chart />} />
           <Route path="/chart/v8" element={<V8Chart />} />
-          <Route path="/delete" element={<Delete />} />
-          <Route path="/N1" element={<N1 />} />
+          <Route
+            path="/delete"
+            element={
+              <Auth>
+                <Delete />
+              </Auth>
+            }
+          />
+          <Route
+            path="/N1"
+            element={
+              <Auth>
+                <N1 />
+              </Auth>
+            }
+          />
         </Routes>
       </div>
       <div className="footer">
