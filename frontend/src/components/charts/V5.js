@@ -89,7 +89,6 @@ export function V5Chart() {
               >
                 Description
               </a>
-              <p></p>
             </div>
             <div className="inner">
               <a

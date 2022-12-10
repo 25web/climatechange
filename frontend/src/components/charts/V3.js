@@ -85,6 +85,7 @@ export function V3Chart() {
                 className="alink"
                 href="https://gml.noaa.gov/ccgg/about/co2_measurements.html"
               >
+                Description
               </a>
             </div>
             <div className="inner">

@@ -99,14 +99,16 @@ export function V8Chart() {
         <div className="chart-wrapper">
           <div>
             <h4>Description</h4>
-            <p>CO2 emissions by country</p>
+            <p>Fossil CO2 emissions by country in 2021.</p>
           </div>
           <div>
             <h4>Source</h4>
             <div className="inner">
               <a
                 className="alink"
-                href="https://essd.copernicus.org/articles/14/1917/2022/" >
+                href="https://essd.copernicus.org/articles/14/1917/2022/"
+                >
+                  Description
               </a>
             </div>
             <div className="inner">

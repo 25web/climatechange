@@ -72,7 +72,7 @@ export function V6Chart() {
             <p>
               The European Project for Ice Coring in Antarctica Dome ice core
               from Dome C (EDC) has allowed for the reconstruction of
-              atmospheric CO2 concentrations for the last 800,000 years
+              atmospheric CO2 concentrations for the last 800,000 years.
             </p>
           </div>
           <div>
@@ -80,7 +80,9 @@ export function V6Chart() {
             <div className="inner">
               <a
                 className="alink"
-                href="https://www.ncei.noaa.gov/access/paleo-search/study/17975">
+                href="https://www.ncei.noaa.gov/access/paleo-search/study/17975"
+                >
+                  Description
               </a>
             </div>
             <div className="inner">
