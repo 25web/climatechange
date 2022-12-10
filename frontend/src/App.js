@@ -13,8 +13,25 @@ import { V8Chart } from "./components/charts/V8";
 import N1 from "./components/N1";
 import Auth from "./components/Auth";
 import Delete from "./components/Delete";
+import React, { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    //timer to logout user after 10 seconds(for testing) of inactivity
+    let timer;
+    const reset = () => {
+      if (localStorage.getItem("token")) {
+        clearInterval(timer);
+        timer = setInterval(() => {
+          localStorage.clear();
+          window.location.href = "/login";
+        }, 10000);
+      }
+    };
+    document.onkeydown = reset;
+    document.onmousemove = reset;
+  }, []);
+
   return (
     <>
       <div>
@@ -31,7 +48,14 @@ function App() {
           <Route path="/chart/v6" element={<V6Chart />} />
           <Route path="/chart/v7" element={<V7Chart />} />
           <Route path="/chart/v8" element={<V8Chart />} />
-          <Route path="/delete" element={<Delete />} />
+          <Route
+            path="/delete"
+            element={
+              <Auth>
+                <Delete />
+              </Auth>
+            }
+          />
           <Route
             path="/N1"
             element={
