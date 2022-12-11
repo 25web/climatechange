@@ -43,7 +43,7 @@ describe("test chart", function () {
         expect(res.body).to.have.property("resV42");
         expect(res.body).to.have.property("resV43");
         expect(res.body).to.have.property("resV3");
-        expect(res.body).to.have.property("resV10");
+        expect(res.body).to.have.property("resv10_v4");
         done();
       });
   });
@@ -76,7 +76,7 @@ describe("test chart", function () {
         expect("Content-Type", /json/);
         expect(res.body).to.have.property("resV7");
         expect(res.body).to.have.property("resV6");
-        expect(res.body).to.have.property("resV10");
+        expect(res.body).to.have.property("resv10_v7");
         done();
       });
   });

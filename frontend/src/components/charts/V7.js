@@ -15,7 +15,7 @@ export function V7Chart() {
     GetChart("/chart/v7", (res) => {
       setV6(res.data.resV6);
       setV7(res.data.resV7);
-      setV10(res.data.resV10);
+      setV10(res.data.resv10_7);
       setElements(res.data);
     });
   }, []);
