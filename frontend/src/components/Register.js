@@ -9,7 +9,7 @@ export default function Register() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   let url = `http://localhost:3001/user/register`;
   let body = JSON.stringify({
     fname: fname,
@@ -31,7 +31,7 @@ export default function Register() {
       .then((res) => {
         console.log(res);
         if (res.status === 200) {
-          navigate("/login");
+          // navigate("/login");
         }
         setMessage(res.data.message);
       })
@@ -91,10 +91,15 @@ export default function Register() {
         <i className="zmdi zmdi-lock zmdi-hc-lg"></i>
       </div>
       <div className="pmessage">
-        <p>{message}</p>
+        <p data-testid="err">{message}</p>
       </div>
       <div className="container">
-        <button onClick={register} className="btn">
+        <button
+          onClick={register}
+          data-testid="register"
+          id="register"
+          className="btn"
+        >
           Register
         </button>
       </div>
