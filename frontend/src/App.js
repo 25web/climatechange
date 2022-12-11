@@ -1,5 +1,4 @@
 import Login from "./components/Login";
-import Logout from "./components/Logout";
 import Register from "./components/Register";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
@@ -39,9 +38,6 @@ function App() {
   return (
     <>
       <div className="all">
-        <div>
-          <Logout />
-        </div>
         <div className="header">
           <Navbar />
         </div>
