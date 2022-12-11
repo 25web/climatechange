@@ -12,6 +12,15 @@ const view = {
       callback
     );
   },
+
+  delete: function (url, userId, callback) {
+    return db.query(
+      "DELETE FROM views WHERE url = ? AND user_ID = ?",
+      [url, userId],
+      callback
+    );
+  },
+
   all: function (callback) {
     return db.query("SELECT * FROM views", callback);
   },

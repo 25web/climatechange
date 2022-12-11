@@ -34,6 +34,24 @@ const newView = (req, res) => {
   });
 };
 
+const deleteView = (req, res) => {
+  if (!req.userId) {
+    return res.status(401).json({ message: "Unauthorized." });
+  }
+  viewModel.delete(req.params.url, req.userId, (err, result) => {
+    if (err) {
+      console.log(err);
+      return res.status(500).json({ message: "Internal server error." });
+    }
+    if (result.affectedRows === 0) {
+      return res.status(400).json({ message: "No data found." });
+    }
+    return res
+      .status(200)
+      .json({ status: "success", message: "View deleted." });
+  });
+};
+
 const getAllViews = (req, res) => {
   viewModel.all((err, result) => {
     if (err) {
@@ -51,4 +69,5 @@ module.exports = {
   getView,
   newView,
   getAllViews,
+  deleteView,
 };
