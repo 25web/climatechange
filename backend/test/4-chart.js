@@ -76,6 +76,7 @@ describe("test chart", function () {
         expect("Content-Type", /json/);
         expect(res.body).to.have.property("resV7");
         expect(res.body).to.have.property("resV6");
+        expect(res.body).to.have.property("resV10");
         done();
       });
   });
