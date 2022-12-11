@@ -600,13 +600,13 @@ DROP TABLE IF EXISTS `views`;
 CREATE TABLE `views` (
   `view_ID` int NOT NULL AUTO_INCREMENT,
   `url` varchar(45) NOT NULL,
-  `charts` json NOT NULL,
+  `charts` varchar(255) NOT NULL,
   `user_ID` int NOT NULL,
   PRIMARY KEY (`view_ID`),
   UNIQUE KEY `url_UNIQUE` (`url`),
   UNIQUE KEY `view_ID_UNIQUE` (`view_ID`),
   KEY `fk_views_users_idx` (`user_ID`),
-  CONSTRAINT `fk_views_users` FOREIGN KEY (`user_ID`) REFERENCES `users` (`user_ID`)
+  FOREIGN KEY (`user_ID`) REFERENCES `users` (`user_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
