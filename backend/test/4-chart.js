@@ -20,6 +20,33 @@ describe("test chart", function () {
         done();
       });
   });
+  it("test chart v3", function (done) {
+    chai
+      .request(url)
+      .get("/chart/v3")
+      .end(function (err, res) {
+        expect(res).to.have.status(200);
+        expect("Content-Type", /json/);
+        expect(res.body).to.have.property("resMonthly");
+        expect(res.body).to.have.property("resAnnual");
+        done();
+      });
+  });
+  it("test chart v4", function (done) {
+    chai
+      .request(url)
+      .get("/chart/v4")
+      .end(function (err, res) {
+        expect(res).to.have.status(200);
+        expect("Content-Type", /json/);
+        expect(res.body).to.have.property("resV41");
+        expect(res.body).to.have.property("resV42");
+        expect(res.body).to.have.property("resV43");
+        expect(res.body).to.have.property("resV3");
+        expect(res.body).to.have.property("resV10");
+        done();
+      });
+  });
   it("test chart v5", function (done) {
     chai
       .request(url)
@@ -49,6 +76,7 @@ describe("test chart", function () {
         expect("Content-Type", /json/);
         expect(res.body).to.have.property("resV7");
         expect(res.body).to.have.property("resV6");
+        expect(res.body).to.have.property("resV10");
         done();
       });
   });
