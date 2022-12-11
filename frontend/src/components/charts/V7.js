@@ -62,7 +62,7 @@ export function V7Chart() {
       },
     ],
   };
-  
+
   let options = {
     responsive: true,
     plugins: {
@@ -126,12 +126,22 @@ export function V7Chart() {
           <div>
             <h4>Description</h4>
             <p>
-              Evolution of global temperature over the past two million years
+              Evolution of global temperature over the past two million years combined with major human evolution and cultural events.
             </p>
           </div>
+
           <div>
             <h4>Source</h4>
             <div className="inner">
+              <a>Evolution of global temperature over the past two million years:</a>
+              &nbsp;&nbsp;
+              <a
+                className="alink"
+                href="https://climate.fas.harvard.edu/files/climate/files/snyder_2016.pdf"
+              >
+                Description
+              </a>
+              &nbsp;&nbsp;
               <a
                 className="alink"
                 href="http://carolynsnyder.com/publications.php"
@@ -140,11 +150,13 @@ export function V7Chart() {
               </a>
             </div>
             <div className="inner">
+              <a>Human Evolution and Activities:</a>
+              &nbsp;&nbsp;
               <a
                 className="alink"
-                href="https://climate.fas.harvard.edu/files/climate/files/snyder_2016.pdf"
+                href="https://www.southampton.ac.uk/~cpd/history.html"
               >
-                Description
+                Dataset
               </a>
             </div>
           </div>

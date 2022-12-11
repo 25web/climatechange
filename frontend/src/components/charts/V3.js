@@ -75,7 +75,7 @@ export function V3Chart() {
             <h4>Description</h4>
             <p>
               Atmospheric CO2 concentrations from Mauna Loa measurements
-              starting 1958
+              starting from 1958.
             </p>
           </div>
           <div>
