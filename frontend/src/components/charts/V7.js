@@ -15,7 +15,7 @@ export function V7Chart() {
     GetChart("/chart/v7", (res) => {
       setV6(res.data.resV6);
       setV7(res.data.resV7);
-      setV10(res.data.resV10);
+      setV10(res.data.resv10_v7);
       setElements(res.data);
     });
   }, []);
@@ -51,14 +51,16 @@ export function V7Chart() {
         label: "Human Evolution and Activities",
         data: v10,
         borderColor: "rgb(255, 4, 234)",
-        backgroundColor: "rgb(255, 4, 234)",
+        backgroundColor: "rgb(0, 0, 0)",
         hidden: false,
         showLine: false,
         parsing: {
+          
           xAxisKey: "year",
           yAxisKey: "val",
         },
-        pointRadius: 3,
+        pointRadius: 10,
+        stacked: true,
       },
     ],
   };
@@ -92,6 +94,7 @@ export function V7Chart() {
           stepSize: 50000,
         },
         type: "linear",
+        max : 3000,
         time: {
           unit: "year",
         },

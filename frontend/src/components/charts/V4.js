@@ -19,7 +19,7 @@ export function V4Chart() {
       setV42(res.data.resV42);
       setV43(res.data.resV43);
       setV3(res.data.resV3);
-      setV10(res.data.resV10);
+      setV10(res.data.resv10_v4);
     });
   }, []);
 
@@ -63,15 +63,15 @@ export function V4Chart() {
       {
         label: "Human Evolution and Activities",
         data: v10,
-        borderColor: "rgb(4, 255, 46)",
-        backgroundColor: "rgb(4, 255, 46)",
+        borderColor: "rgb(255, 4, 234)",
+        backgroundColor: "rgb(0, 0, 0)",
         hidden: false,
         showLine: false,
         parsing: {
           xAxisKey: "year",
           yAxisKey: "val",
         },
-        pointRadius: 3,
+        pointRadius: 10,
       },
       {
         label: boolean ? "co2 mean" : "",
@@ -112,6 +112,7 @@ export function V4Chart() {
     scales: {
       x: {
         type: "linear",
+        max : 2020,
       },
     },
   };
