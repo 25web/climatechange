@@ -590,6 +590,45 @@ INSERT INTO `v9` VALUES ('Road',11.9),('Aviation',1.9),('Rail',0.4),('Pipeline',
 /*!40000 ALTER TABLE `v9` ENABLE KEYS */;
 UNLOCK TABLES;
 
+DROP TABLE IF EXISTS `v9_energy`;
+CREATE TABLE `v9_energy` (
+  `sector` mediumtext,
+  `emission_share` double DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+LOCK TABLES `v9_energy` WRITE;
+INSERT INTO `v9_energy` VALUES ('Transport',16.2),('Energy in buildings (elec and heat)',17.5),('Energy in industry',24.2),('Energy in Agri & Fishing',1.7),('Unallocated fuel combustion',7.8),('Fugitive emissions from energy',5.8);
+UNLOCK TABLES;
+
+DROP TABLE IF EXISTS `v9_processes`;
+CREATE TABLE `v9_processes` (
+  `sector` mediumtext,
+  `emission_share` double DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+LOCK TABLES `v9_processes` WRITE;
+INSERT INTO `v9_processes` VALUES ('Cement',3),('Chemical & petrochemical (industrial)',2.2);
+
+UNLOCK TABLES;
+
+DROP TABLE IF EXISTS `v9_waste`;
+CREATE TABLE `v9_waste` (
+  `sector` mediumtext,
+  `emission_share` double DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+LOCK TABLES `v9_waste` WRITE;
+INSERT INTO `v9_waste` VALUES ('Landfills',1.9),('Wastewater',1.3);
+
+UNLOCK TABLES;
+
+DROP TABLE IF EXISTS `v9_land`;
+CREATE TABLE `v9_land` (
+  `sector` mediumtext,
+  `emission_share` double DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+LOCK TABLES `v9_land` WRITE;
+INSERT INTO `v9_land` VALUES ('Livestock & Manure',5.8),('Rice Cultivation',1.3),('Agricultural Soils',4.1),('Crop Burning',3.5),('Forest Land',2.2),('Cropland',1.4),('Grassland',0.1);
+
+UNLOCK TABLES;
+
 --
 -- Table structure for table `views`
 --
