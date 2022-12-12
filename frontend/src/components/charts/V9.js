@@ -14,7 +14,7 @@ export function V9Chart() {
 
   useEffect(() => {
     GetChart("/chart/v9", (res) => {
-      setV9(res.data.resV9); //has 4 data points
+      setV9(res.data.resV9);
       setEnergy(res.data.resV9energy);
       setLand(res.data.resV9land);
       setProcesses(res.data.resV9processes);
