@@ -6,7 +6,7 @@ export default function N1() {
   return (
     <>
       <div className="center">
-        <h2 className="h1">Temperature data and co2 concentrations</h2>
+        <h2 className="h1">Emission sources</h2>
         <div className="mbottom">
           <div className="block">
             <V8 />

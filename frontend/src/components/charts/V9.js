@@ -51,30 +51,68 @@ export function V9Chart() {
   //     setFinal(waste);
   //   }
   // };
-  let options = {};
+  let options = {
+    plugins: {
+      title: {
+        display: true,
+        text: "CO2 emissions by sectors",
+        color: "rgb(0, 0, 7)",
+        font: {
+          size: 17,
+        },
+      },
+    },
+  };
   return (
     <>
-      <div className="chart-wrapper">
-        <Doughnut
-          options={options}
-          // onElementsClick={handleLegendClick}
-          data={data}
-        />
-        <button className="sbtn" onClick={() => setFinal(v9)}>
-          Back to main
-        </button>
-        <button className="sbtn" onClick={() => setFinal(energy)}>
-          Energy
-        </button>
-        <button className="sbtn" onClick={() => setFinal(land)}>
-          Agriculture, Forestry & Land Use (AFOLU)
-        </button>
-        <button className="sbtn" onClick={() => setFinal(processes)}>
-          Industrial processes
-        </button>
-        <button className="sbtn" onClick={() => setFinal(waste)}>
-          Waste
-        </button>
+      <div className="space">
+        <div className="chart-wrapper">
+          <Doughnut
+            options={options}
+            // onElementsClick={handleLegendClick}
+            data={data}
+          />
+          <button className="sbtn" onClick={() => setFinal(v9)}>
+            Back to main
+          </button>
+          <button className="sbtn" onClick={() => setFinal(energy)}>
+            Energy
+          </button>
+          <button className="sbtn" onClick={() => setFinal(land)}>
+            Agriculture, Forestry & Land Use (AFOLU)
+          </button>
+          <button className="sbtn" onClick={() => setFinal(processes)}>
+            Industrial processes
+          </button>
+          <button className="sbtn" onClick={() => setFinal(waste)}>
+            Waste
+          </button>
+        </div>
+        <div className="chart-wrapper">
+          <div>
+            <h4>Description</h4>
+            <p>CO2 emissions by sectors.</p>
+          </div>
+          <div>
+            <h4>Source</h4>
+            <div className="inner">
+              <a
+                className="alink"
+                href="https://ourworldindata.org/emissions-by-sector#co2-emissions-by-secto"
+              >
+                Description
+              </a>
+            </div>
+            <div className="inner">
+              <a
+                className="alink"
+                href="https://ourworldindata.org/uploads/2020/09/Global-GHG-Emissions-by-sector-based-on-WRI-2020.xlsx"
+              >
+                Dataset
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
