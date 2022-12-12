@@ -1,7 +1,8 @@
 import "../css/LR.scss";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "../axios";
 import { useNavigate } from "react-router-dom";
+import { set } from "immutable";
 
 export default function Register() {
   const [fname, setFname] = useState("");
@@ -26,20 +27,24 @@ export default function Register() {
     },
     json: true,
   };
+
   const register = () => {
     axios(authOptions)
       .then((res) => {
         console.log(res);
         if (res.status === 200) {
           navigate("/login");
+          setMessage("Success");
         }
-        setMessage(res.data.message);
       })
       .catch((err) => {
         console.log(err.response.data);
         setMessage(err.response.data.message);
       });
   };
+  useEffect(() => {
+    register();
+  }, []);
 
   return (
     <div className="register-App">
@@ -91,10 +96,15 @@ export default function Register() {
         <i className="zmdi zmdi-lock zmdi-hc-lg"></i>
       </div>
       <div className="pmessage">
-        <p>{message}</p>
+        <p data-testid="err">{message}</p>
       </div>
       <div className="container">
-        <button onClick={register} className="btn">
+        <button
+          onClick={register}
+          data-testid="register"
+          id="register"
+          className="btn"
+        >
           Register
         </button>
       </div>
