@@ -5,10 +5,10 @@ const view = {
     return db.query("SELECT * FROM views WHERE url = ?", [url], callback);
   },
 
-  new: function (url, charts, userId, callback) {
+  new: function (url, charts, title, userId, callback) {
     return db.query(
-      "INSERT INTO views (url, charts, user_ID) VALUES (?,?,?)",
-      [url, charts, userId],
+      "INSERT INTO views (url, charts, title, user_ID) VALUES (?,?,?,?)",
+      [url, charts, title, userId],
       callback
     );
   },
