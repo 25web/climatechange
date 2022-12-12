@@ -94,7 +94,9 @@ export function V8Chart() {
       <div className="space">
         <div className="chart-wrapper">
           <Line options={options} data={data} />
-          <button onClick={() => setBoolean(!boolean)}>Toggle labels</button>
+          <button className="sbtn" onClick={() => setBoolean(!boolean)}>
+            {boolean ? "Show labels" : "Hide labels"}
+          </button>
         </div>
         <div className="chart-wrapper">
           <div>
@@ -107,8 +109,8 @@ export function V8Chart() {
               <a
                 className="alink"
                 href="https://essd.copernicus.org/articles/14/1917/2022/"
-                >
-                  Description
+              >
+                Description
               </a>
             </div>
             <div className="inner">

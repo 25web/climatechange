@@ -141,6 +141,52 @@ const getV8 = (req, res) => {
     return res.status(200).json({ resV8: finalResult, resV8year: result[1] });
   });
 };
+const getV9 = (req, res) => {
+  chartModel.getV9((err, result) => {
+    if (err) {
+      console.log(err);
+      return res.status(500).json({ message: "Internal server error." });
+    }
+    if (result.length === 0) {
+      return res.status(400).json({ message: "No data found." });
+    }
+    let resultWhitColor = result[0];
+    let resultWhitColor1 = result[1];
+    let resultWhitColor2 = result[2];
+    let resultWhitColor3 = result[3];
+    let resultWhitColor4 = result[4];
+
+    const generateColor = () => {
+      const color = Math.floor(Math.random() * 255);
+      const color1 = Math.floor(Math.random() * 255);
+      const color2 = Math.floor(Math.random() * 255);
+      return "rgb(" + color + "," + color1 + "," + color2 + ")";
+    };
+
+    const results = [
+      resultWhitColor,
+      resultWhitColor1,
+      resultWhitColor2,
+      resultWhitColor3,
+      resultWhitColor4,
+    ];
+
+    results.forEach((result) => {
+      result.forEach((item) => {
+        item["color"] = generateColor();
+      });
+    });
+
+    return res.status(200).json({
+      resV9: resultWhitColor,
+      resV9energy: resultWhitColor1,
+      resV9land: resultWhitColor2,
+      resV9processes: resultWhitColor3,
+      resV9waste: resultWhitColor4,
+    });
+  });
+};
+
 module.exports = {
   getV1,
   getV3,
@@ -149,4 +195,5 @@ module.exports = {
   getV6,
   getV7,
   getV8,
+  getV9,
 };

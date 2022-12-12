@@ -74,10 +74,10 @@ export default function Login() {
         <i className="zmdi zmdi-lock zmdi-hc-lg"></i>
       </div>
       <div className="pmessage">
-        <p>{message}</p>
+        <p data-testid="err">{message}</p>
       </div>
       <div className="container">
-        <button onClick={login} className="btnn">
+        <button onClick={login} data-testid="login" className="btn">
           Login
         </button>
       </div>

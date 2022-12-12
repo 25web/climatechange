@@ -10,5 +10,6 @@ router.get("/v5", chartController.getV5);
 router.get("/v6", chartController.getV6);
 router.get("/v7", chartController.getV7);
 router.get("/v8", chartController.getV8);
+router.get("/v9", chartController.getV9);
 
 module.exports = router;
