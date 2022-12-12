@@ -30,7 +30,8 @@ export default function Login() {
         console.log(res);
         if (res.status === 200) {
           localStorage.setItem("token", res.data.token);
-          navigate("/N1"); // the right one will be added later
+          navigate("/profile"); // the right one will be added later
+          window.location.reload(true);
         }
         setMessage(res.data.message);
       })

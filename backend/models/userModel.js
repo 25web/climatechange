@@ -23,7 +23,7 @@ const user = {
 
   delete: function (username, callback) {
     return db.query(
-      "DELETE FROM users WHERE username = ?",
+      "DELETE FROM users WHERE user_ID = ?",
       [username],
       callback
     );

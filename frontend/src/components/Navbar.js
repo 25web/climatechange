@@ -33,8 +33,8 @@ function Navbarr() {
   return (
     <Navbar fixed="top" className="color-nav" variant="dark">
       <Nav>
-        <Nav.Link as={Link} to="/home">
-          Home
+        <Nav.Link as={Link} to="/profile">
+          Profile
         </Nav.Link>
         <Nav.Link as={Link} to="/login">
             Login
@@ -51,7 +51,7 @@ function Navbarr() {
           <Dropdown.Menu>
             <Dropdown.Item href="/n1">N1</Dropdown.Item>
             <Dropdown.Item href="/n2">N2</Dropdown.Item>
-            <Dropdown.Item href="#/action-3">test3</Dropdown.Item>
+            <Dropdown.Item href="/createview">Create a view</Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
       </Nav>
