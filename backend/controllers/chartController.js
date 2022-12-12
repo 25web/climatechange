@@ -49,7 +49,7 @@ const getV4 = (req, res) => {
       resV42: result[1],
       resV43: result[2],
       resV3: result[3],
-      resV10: yline,
+      resv10_v4: yline,
     });
   });
 };
@@ -98,7 +98,7 @@ const getV7 = (req, res) => {
     return res.status(200).json({
       resV7: result[0],
       resV6: result[1],
-      resV10: yline,
+      resv10_v7: yline,
     });
   });
 };

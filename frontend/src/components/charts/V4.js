@@ -19,7 +19,7 @@ export function V4Chart() {
       setV42(res.data.resV42);
       setV43(res.data.resV43);
       setV3(res.data.resV3);
-      setV10(res.data.resV10);
+      setV10(res.data.resv10_v4);
     });
   }, []);
 
