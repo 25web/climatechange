@@ -653,6 +653,7 @@ CREATE TABLE `views` (
   `view_ID` int NOT NULL AUTO_INCREMENT,
   `url` varchar(45) NOT NULL,
   `charts` varchar(255) NOT NULL,
+  `title` varchar(45) NOT NULL,
   `user_ID` int NOT NULL,
   PRIMARY KEY (`view_ID`),
   UNIQUE KEY `url_UNIQUE` (`url`),
