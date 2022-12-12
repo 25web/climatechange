@@ -1,7 +1,8 @@
 import "../css/LR.scss";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "../axios";
 import { useNavigate } from "react-router-dom";
+import { set } from "immutable";
 
 export default function Register() {
   const [fname, setFname] = useState("");
@@ -9,7 +10,7 @@ export default function Register() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   let url = `http://localhost:3001/user/register`;
   let body = JSON.stringify({
     fname: fname,
@@ -26,20 +27,24 @@ export default function Register() {
     },
     json: true,
   };
+
   const register = () => {
     axios(authOptions)
       .then((res) => {
         console.log(res);
         if (res.status === 200) {
-          // navigate("/login");
+          navigate("/login");
+          setMessage("Success");
         }
-        setMessage(res.data.message);
       })
       .catch((err) => {
         console.log(err.response.data);
         setMessage(err.response.data.message);
       });
   };
+  useEffect(() => {
+    register();
+  }, []);
 
   return (
     <div className="register-App">
