@@ -11,7 +11,9 @@ import { V6Chart } from "./components/charts/V6";
 import { V7Chart } from "./components/charts/V7";
 import { V8Chart } from "./components/charts/V8";
 import N1 from "./components/N1";
+import N2 from "./components/N2";
 import Auth from "./components/Auth";
+import { V9Chart } from "./components/charts/V9";
 import Delete from "./components/Delete";
 import React, { useEffect } from "react";
 
@@ -64,6 +66,8 @@ function App() {
               </Auth>
             }
           />
+          <Route path="/N2" element={<N2 />} />
+          <Route path="/chart/v9" element={<V9Chart />} />
         </Routes>
       </div>
       <div className="footer">
