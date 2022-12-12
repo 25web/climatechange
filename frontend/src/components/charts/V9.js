@@ -1,6 +1,6 @@
 import { GetChart } from "./GetChart";
-import { Doughnut } from "react-chartjs-2";
-import { useEffect, useState } from "react";
+import { Doughnut, getElementsAtEvent } from "react-chartjs-2";
+import { useEffect, useState, useRef } from "react";
 import "../../css/chart.scss";
 import "chartjs-adapter-luxon";
 
@@ -11,6 +11,8 @@ export function V9Chart() {
   const [land, setLand] = useState([]);
   const [processes, setProcesses] = useState([]);
   const [waste, setWaste] = useState([]);
+
+  const chartRef = useRef();
 
   useEffect(() => {
     GetChart("/chart/v9", (res) => {
@@ -26,31 +28,31 @@ export function V9Chart() {
   }, []);
 
   const data = {
-    labels: final.map((v) => v.sector),
+    labels: final.map((label) => label.sector),
     datasets: [
       {
-        backgroundColor: final.map((v) => v.color),
-        borderColor: final.map((v) => v.color),
-        data: final.map((v) => v.emission_share),
+        data: final.map((label) => label.emission_share),
+        backgroundColor: final.map((label) => label.color),
+        borderColor: final.map((label) => label.color),
       },
     ],
   };
 
-  //dosent work
-  // const handleLegendClick = (e) => {
-  //   const index = e[0]._index;
-  //   const label = e[0]._chart.data.labels[index];
-  //   console.log(label);
-  //   if (label === "Energy") {
-  //     setFinal(energy);
-  //   } else if (label === "Agriculture, Forestry & Land Use (AFOLU)") {
-  //     setFinal(land);
-  //   } else if (label === "Industrial processes") {
-  //     setFinal(processes);
-  //   } else if (label === "Waste") {
-  //     setFinal(waste);
-  //   }
-  // };
+  const handleLegendClick = (e) => {
+    const idx = getElementsAtEvent(chartRef.current, e)["0"].index;
+    if (final[idx].sector === "Energy") {
+      setFinal(energy);
+    } else if (
+      final[idx].sector === "Agriculture, Forestry & Land Use (AFOLU)"
+    ) {
+      setFinal(land);
+    } else if (final[idx].sector === "Industrial processes") {
+      setFinal(processes);
+    } else if (final[idx].sector === "Waste") {
+      setFinal(waste);
+    }
+  };
+
   let options = {
     plugins: {
       title: {
@@ -69,29 +71,22 @@ export function V9Chart() {
         <div className="chart-wrapper">
           <Doughnut
             options={options}
-            // onElementsClick={handleLegendClick}
+            ref={chartRef}
+            onClick={handleLegendClick}
             data={data}
           />
           <button className="sbtn" onClick={() => setFinal(v9)}>
             Back to main
           </button>
-          <button className="sbtn" onClick={() => setFinal(energy)}>
-            Energy
-          </button>
-          <button className="sbtn" onClick={() => setFinal(land)}>
-            Agriculture, Forestry & Land Use (AFOLU)
-          </button>
-          <button className="sbtn" onClick={() => setFinal(processes)}>
-            Industrial processes
-          </button>
-          <button className="sbtn" onClick={() => setFinal(waste)}>
-            Waste
-          </button>
         </div>
         <div className="chart-wrapper">
           <div>
             <h4>Description</h4>
-            <p>The global breakdown for CO2 is similar to that of total greenhouse gases electricity and heat production dominates, followed by transport, and manufacturing and construction.</p>
+            <p>
+              The global breakdown for CO2 is similar to that of total
+              greenhouse gases electricity and heat production dominates,
+              followed by transport, and manufacturing and construction.
+            </p>
           </div>
           <div>
             <h4>Source</h4>
