@@ -91,7 +91,7 @@ export function V9Chart() {
         <div className="chart-wrapper">
           <div>
             <h4>Description</h4>
-            <p>CO2 emissions by sectors.</p>
+            <p>The global breakdown for CO2 is similar to that of total greenhouse gases electricity and heat production dominates, followed by transport, and manufacturing and construction.</p>
           </div>
           <div>
             <h4>Source</h4>
