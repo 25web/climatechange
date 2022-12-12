@@ -28,12 +28,12 @@ export function V9Chart() {
   }, []);
 
   const data = {
-    labels: final.map((label) => label.sector),
+    labels: final.map((v) => v.sector),
     datasets: [
       {
-        data: final.map((label) => label.emission_share),
-        backgroundColor: final.map((label) => label.color),
-        borderColor: final.map((label) => label.color),
+        data: final.map((v) => v.emission_share),
+        backgroundColor: final.map((v) => v.color),
+        borderColor: final.map((v) => v.color),
       },
     ],
   };
