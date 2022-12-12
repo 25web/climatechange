@@ -151,28 +151,38 @@ const getV9 = (req, res) => {
       return res.status(400).json({ message: "No data found." });
     }
     let resultWhitColor = result[0];
+    let resultWhitColor1 = result[1];
+    let resultWhitColor2 = result[2];
+    let resultWhitColor3 = result[3];
+    let resultWhitColor4 = result[4];
 
-    resultWhitColor.forEach((item) => {
+    const generateColor = () => {
       const color = Math.floor(Math.random() * 255);
       const color1 = Math.floor(Math.random() * 255);
       const color2 = Math.floor(Math.random() * 255);
-      const fullColor = (
-        "rgb(" +
-        color +
-        "," +
-        color1 +
-        "," +
-        color2 +
-        ")"
-      ).toString();
-      item["color"] = fullColor;
+      return "rgb(" + color + "," + color1 + "," + color2 + ")";
+    };
+
+    const results = [
+      resultWhitColor,
+      resultWhitColor1,
+      resultWhitColor2,
+      resultWhitColor3,
+      resultWhitColor4,
+    ];
+
+    results.forEach((result) => {
+      result.forEach((item) => {
+        item["color"] = generateColor();
+      });
     });
+
     return res.status(200).json({
       resV9: resultWhitColor,
-      resV9energy: result[1],
-      resV9land: result[2],
-      resV9processes: result[3],
-      resV9waste: result[4],
+      resV9energy: resultWhitColor1,
+      resV9land: resultWhitColor2,
+      resV9processes: resultWhitColor3,
+      resV9waste: resultWhitColor4,
     });
   });
 };
