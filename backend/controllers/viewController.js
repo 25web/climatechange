@@ -30,7 +30,7 @@ const newView = (req, res) => {
   const chartsArr = req.body.charts;
   const charts = chartsArr.join(",");
   const url = shortid.generate();
-  if (/^[a-z0-9]+$/i.test(req.body.title) === false) {
+  if (/^[a-z0-9 ]+$/i.test(req.body.title) === false) {
     return res
       .status(400)
       .json({ message: "Invalid title. Title must be alphanumeric" });
