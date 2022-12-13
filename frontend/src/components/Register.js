@@ -49,13 +49,13 @@ export default function Register() {
   return (
     <div className="register-App">
       <div className="divp">
-        <h2 className="active"> Register </h2>
         <h2 className="inactive underlineHover">
           <Link className="alink" to="/login">
             {" "}
             Login{" "}
           </Link>
         </h2>
+        <h2 className="active"> Register </h2>
       </div>
       <div className="input-container-two">
         <input
