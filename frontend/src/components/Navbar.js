@@ -5,7 +5,6 @@ import Navbar from "react-bootstrap/Navbar";
 import "../css/FNH.scss";
 import Dropdown from "react-bootstrap/Dropdown";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { AxiosAuth } from "./charts/GetChart";
 
 function Navbarr() {
@@ -38,10 +37,9 @@ function Navbarr() {
           {!tokenIsValid ? "login" : "logout"}
         </Nav.Link>
         <Dropdown>
-          <Dropdown.Toggle variant="success" id="dropdown-custom">
+          <Dropdown.Toggle variant="primary" id="dropdown-custom">
             Views
           </Dropdown.Toggle>
-
           <Dropdown.Menu>
             <Dropdown.Item as={Link} to="/n1">
               N1

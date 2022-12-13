@@ -81,8 +81,8 @@ export function V6Chart() {
               <a
                 className="alink"
                 href="https://www.ncei.noaa.gov/access/paleo-search/study/17975"
-                >
-                  Description
+              >
+                Description
               </a>
             </div>
             <div className="inner">

@@ -1,9 +1,9 @@
 import React from "react";
 import { render, fireEvent, screen } from "@testing-library/react";
 import Register from "../Register";
-import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom/extend-expect";
 import { BrowserRouter as Router } from "react-router-dom";
+
 const href_fix = (
   <Router>
     <Register />

@@ -169,7 +169,6 @@ h2.active {
   padding: 6px 26px;
   font-size: 16px;
   border: 2px solid $medium-gray;
-  // margin: 0;
   position: relative;
   color: $medium-gray;
   border-radius: 30px;
@@ -177,7 +176,6 @@ h2.active {
 }
 
 .btnn:hover {
-  // background: $medium-gray;
   color: lighten($medium-gray, 10%);
   border: 2px solid lighten($medium-gray, 10%);
 }

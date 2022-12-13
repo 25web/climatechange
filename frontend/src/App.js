@@ -13,7 +13,6 @@ import Profile from "./components/Profile";
 
 function App() {
   useEffect(() => {
-    //timer to logout user after 10 seconds(for testing) of inactivity
     let timer;
     const reset = () => {
       if (localStorage.getItem("token")) {

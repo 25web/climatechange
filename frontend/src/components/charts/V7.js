@@ -9,14 +9,12 @@ export function V7Chart() {
   const [v6, setV6] = useState([]);
   const [v7, setV7] = useState([]);
   const [v10, setV10] = useState([]);
-  const [elements, setElements] = useState([]);
 
   useEffect(() => {
     GetChart("/chart/v7", (res) => {
       setV6(res.data.resV6);
       setV7(res.data.resV7);
       setV10(res.data.resv10_v7);
-      setElements(res.data);
     });
   }, []);
 
@@ -55,7 +53,6 @@ export function V7Chart() {
         hidden: false,
         showLine: false,
         parsing: {
-          
           xAxisKey: "year",
           yAxisKey: "val",
         },
@@ -94,7 +91,7 @@ export function V7Chart() {
           stepSize: 50000,
         },
         type: "linear",
-        max : 3000,
+        max: 3000,
         time: {
           unit: "year",
         },
@@ -129,14 +126,17 @@ export function V7Chart() {
           <div>
             <h4>Description</h4>
             <p>
-              Evolution of global temperature over the past two million years combined with major human evolution and cultural events.
+              Evolution of global temperature over the past two million years
+              combined with major human evolution and cultural events.
             </p>
           </div>
 
           <div>
             <h4>Source</h4>
             <div className="inner">
-              <a>Evolution of global temperature over the past two million years:</a>
+              <a>
+                Evolution of global temperature over the past two million years:
+              </a>
               &nbsp;&nbsp;
               <a
                 className="alink"
