@@ -1,25 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import axios from "../axios";
+import { AxiosAuth } from "./charts/GetChart";
 
 //checks if jwt token is ok and moves to the user to the wanted site. If the token is not correct takes the user to a page that has a link to the login page
 const Auth = ({ children }) => {
   const [tokenIsValid, setTokenIsValid] = useState(false);
-  async function AxiosAuth(path, callback) {
-    const token = "Bearer " + localStorage.getItem("token");
-    axios
-      .get("http://localhost:3001" + path, {
-        headers: {
-          Authorization: token,
-        },
-      })
-      .then((res) => {
-        callback(res);
-      })
-      .catch((err) => {
-        callback(err);
-      });
-  }
   useEffect(() => {
     AxiosAuth("/user/auth", (res) => {
       if (res.status === 200) {

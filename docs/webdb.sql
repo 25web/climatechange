@@ -659,7 +659,7 @@ CREATE TABLE `views` (
   UNIQUE KEY `url_UNIQUE` (`url`),
   UNIQUE KEY `view_ID_UNIQUE` (`view_ID`),
   KEY `fk_views_users_idx` (`user_ID`),
-  FOREIGN KEY (`user_ID`) REFERENCES `users` (`user_ID`)
+  FOREIGN KEY (`user_ID`) REFERENCES `users` (`user_ID`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 

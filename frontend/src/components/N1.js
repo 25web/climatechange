@@ -4,7 +4,6 @@ import V4 from "./charts/V4";
 import V5 from "./charts/V5";
 import V6 from "./charts/V6";
 import V7 from "./charts/V7";
-import "../css/chart.scss";
 
 //Shows charts V1-V7
 export default function N1() {

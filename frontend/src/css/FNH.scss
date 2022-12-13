@@ -9,6 +9,10 @@ $gradient: linear-gradient(
   #006cff,
   #122feb
 );
+.color-nav {
+  background-color: $gray;
+  position: top;
+}
 
 footer {
   left: 0;
@@ -28,11 +32,6 @@ footer a {
   margin: 0;
   text-decoration: underline;
 }
-footer div.col {
-  width: 20%;
-  display: inline-block;
-  vertical-align: top;
-}
 
 footer ul li a:hover {
   color: #0097ff;
@@ -44,10 +43,13 @@ footer ul li a {
 footer ul {
   list-style: none;
   margin-top: 2em;
-  // padding: 0;
 }
 footer ul li {
   text-align: left;
   margin: 0;
   padding: 0;
+}
+
+.dropdown-menu {
+  background-color: #ff0000;
 }

@@ -2,6 +2,7 @@ import "../css/LR.scss";
 import React, { useState } from "react";
 import axios from "../axios";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 //lets user login and refreshes the page if username and pasword are correct and gives and error if they are wrong
 export default function Login() {
@@ -30,7 +31,8 @@ export default function Login() {
         console.log(res);
         if (res.status === 200) {
           localStorage.setItem("token", res.data.token);
-          navigate("/N1"); // the right one will be added later
+          navigate("/profile");
+          window.location.reload(true);
         }
         setMessage(res.data.message);
       })
@@ -45,9 +47,10 @@ export default function Login() {
       <div className="divp">
         <h2 className="active"> Login </h2>
         <h2 className="inactive underlineHover">
-          <a className="alink" href="/register">
-            Register
-          </a>
+          <Link className="alink" to="/register">
+            {" "}
+            Register{" "}
+          </Link>
         </h2>
       </div>
       <div className="input-container">
@@ -75,7 +78,7 @@ export default function Login() {
         <p data-testid="err">{message}</p>
       </div>
       <div className="container">
-        <button onClick={login} data-testid="login" className="btn">
+        <button onClick={login} data-testid="login" className="btnn">
           Login
         </button>
       </div>

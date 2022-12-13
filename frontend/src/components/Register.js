@@ -2,7 +2,7 @@ import "../css/LR.scss";
 import React, { useEffect, useState } from "react";
 import axios from "../axios";
 import { useNavigate } from "react-router-dom";
-import { set } from "immutable";
+import { Link } from "react-router-dom";
 
 //creates new account and redirects to login page
 export default function Register() {
@@ -50,12 +50,13 @@ export default function Register() {
   return (
     <div className="register-App">
       <div className="divp">
-        <h2 className="active"> Register </h2>
         <h2 className="inactive underlineHover">
-          <a className="alink" href="/login">
-            Login
-          </a>
+          <Link className="alink" to="/login">
+            {" "}
+            Login{" "}
+          </Link>
         </h2>
+        <h2 className="active"> Register </h2>
       </div>
       <div className="input-container-two">
         <input
@@ -104,7 +105,7 @@ export default function Register() {
           onClick={register}
           data-testid="register"
           id="register"
-          className="btn"
+          className="btnn"
         >
           Register
         </button>

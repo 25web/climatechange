@@ -13,6 +13,14 @@ const user = {
     });
   },
 
+  userInfo: function (userId, callback) {
+    return db.query(
+      "SELECT users.*, group_concat(views.url) as views FROM users JOIN views ON users.user_ID = views.user_ID WHERE users.user_ID = ?",
+      [userId],
+      callback
+    );
+  },
+
   getByUsername: function (username, callback) {
     return db.query(
       "SELECT * FROM users WHERE username = ?",
@@ -23,7 +31,7 @@ const user = {
 
   delete: function (username, callback) {
     return db.query(
-      "DELETE FROM users WHERE username = ?",
+      "DELETE FROM users WHERE user_ID = ?",
       [username],
       callback
     );

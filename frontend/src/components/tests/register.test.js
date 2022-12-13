@@ -1,8 +1,14 @@
 import React from "react";
 import { render, fireEvent, screen } from "@testing-library/react";
 import Register from "../Register";
-import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom/extend-expect";
+import { BrowserRouter as Router } from "react-router-dom";
+
+const href_fix = (
+  <Router>
+    <Register />
+  </Router>
+);
 
 const mockedUsedNavigate = jest.fn();
 jest.mock("react-router-dom", () => ({
@@ -13,7 +19,7 @@ describe("<Register />", () => {
 
   //test for rendering the register form
   it("renders the register form", () => {
-    render(<Register />);
+    render(href_fix);
     const fname = screen.getByPlaceholderText("First Name");
     const lname = screen.getByPlaceholderText("Last Name");
     const name = screen.getByPlaceholderText("Username");
@@ -27,7 +33,7 @@ describe("<Register />", () => {
 
   //test for updating state when a value change happens
   it("updates state when form input values change", () => {
-    const { getByPlaceholderText } = render(<Register />);
+    const { getByPlaceholderText } = render(href_fix);
     const fnameInput = getByPlaceholderText("First Name");
     const lnameInput = getByPlaceholderText("Last Name");
     const usernameInput = getByPlaceholderText("Username");
@@ -46,14 +52,14 @@ describe("<Register />", () => {
 
   //test for rendering the register button
   it("renders the register button", () => {
-    const { getByTestId } = render(<Register />);
+    const { getByTestId } = render(href_fix);
     const registerButton = getByTestId("register");
     expect(registerButton).toBeDefined();
   });
 
   //test for attempting to submit
   it("attempt to submit", async () => {
-    const { getByPlaceholderText, getByTestId } = render(<Register />);
+    const { getByPlaceholderText, getByTestId } = render(href_fix);
     const fnameInput = getByPlaceholderText("First Name");
     const lnameInput = getByPlaceholderText("Last Name");
     const usernameInput = getByPlaceholderText("Username");
