@@ -34,7 +34,7 @@ function Navbarr() {
           Profile
         </Nav.Link>
         <Nav.Link as={Link} onClick={logout} to="/login">
-          {!tokenIsValid ? "login" : "logout"}
+          {!tokenIsValid ? "Login" : "Logout"}
         </Nav.Link>
         <Dropdown>
           <Dropdown.Toggle variant="primary" id="dropdown-custom">
