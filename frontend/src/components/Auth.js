@@ -1,16 +1,32 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { AuthGet } from "./charts/GetChart";
+import axios from "../axios";
 
 const Auth = ({ children }) => {
   const [tokenIsValid, setTokenIsValid] = useState(false);
-  const checkStorage = (key) => {
-    const storedData = localStorage.getItem(key);
-    if (!storedData) setTokenIsValid(false);
-    else setTokenIsValid(true);
-  };
+  async function AxiosAuth(path, callback) {
+    const token = "Bearer " + localStorage.getItem("token");
+    axios
+      .get("http://localhost:3001" + path, {
+        headers: {
+          Authorization: token,
+        },
+      })
+      .then((res) => {
+        callback(res);
+      })
+      .catch((err) => {
+        callback(err);
+      });
+  }
   useEffect(() => {
-    checkStorage("token");
+    AxiosAuth("/user/auth", (res) => {
+      if (res.status === 200) {
+        setTokenIsValid(true);
+      } else {
+        setTokenIsValid(false);
+      }
+    });
   }, []);
 
   if (!tokenIsValid) {
