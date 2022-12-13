@@ -28,6 +28,7 @@ function App() {
     document.onmousemove = reset;
   }, []);
 
+  //creates the routes for the app
   return (
     <>
       <div className="all">

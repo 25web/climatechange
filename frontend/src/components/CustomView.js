@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../css/FNH.scss";
 
+// creates a custom view for the user
 export default function CustomView() {
   const [checkedValues, setCheckedValues] = useState([]);
 

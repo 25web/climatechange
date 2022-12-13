@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import "../css/chart.scss";
+
+//page for 404 error when user tries to access a page that doesn't exist
 export default function NotFound() {
     const navigate = useNavigate();
     const nav = () => {
