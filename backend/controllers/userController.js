@@ -68,11 +68,10 @@ const getAllUsers = (req, res) => {
 };
 
 const deleteUser = (req, res) => {
-  const { username } = req.body;
-  if (!username) {
-    return res.status(400).json({ message: "Please enter username." });
+  if (!req.userId) {
+    return res.status(401).json({ message: "Unauthorized." });
   }
-  user.delete(username, (err, result) => {
+  user.delete(req.userId, (err, result) => {
     if (err) {
       console.log(err);
       return res.status(500).json({ message: "Internal server error." });

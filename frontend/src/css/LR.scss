@@ -13,9 +13,9 @@ $gradient: linear-gradient(
 .login-App {
   padding-bottom: 10px;
   background: $gray;
-  // height: 340px;
+  height: 340px;
   width: 520px;
-  margin: 75px auto;
+  margin: auto;
   border-radius: 5px;
   box-shadow: 0px 4px 30px -5px rgba(0, 0, 0, 0.65);
   display: flex;
@@ -27,12 +27,17 @@ $gradient: linear-gradient(
   background: $gray;
   height: 420px;
   width: 520px;
-  margin: 75px auto;
+  margin: auto;
   border-radius: 5px;
   box-shadow: 0px 4px 30px -5px rgba(0, 0, 0, 0.65);
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+}
+.container {
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 .input-container {
@@ -110,7 +115,7 @@ h2 {
   text-transform: uppercase;
   display: inline-block;
   margin: 40px 8px 10px 8px;
-  color: #cccccc;
+  color: #fafafa;
 }
 
 h2.inactive {
@@ -160,7 +165,7 @@ h2.active {
   -webkit-text-fill-color: transparent;
 }
 
-.btn {
+.btnn {
   padding: 6px 26px;
   font-size: 16px;
   border: 2px solid $medium-gray;
@@ -168,11 +173,9 @@ h2.active {
   color: $medium-gray;
   border-radius: 30px;
   background: $gray;
-  cursor: pointer;
 }
 
-.btn:hover {
-  // background: $medium-gray;
+.btnn:hover {
   color: lighten($medium-gray, 10%);
   border: 2px solid lighten($medium-gray, 10%);
 }
@@ -184,7 +187,6 @@ h2.active {
   color: $medium-gray;
   border-radius: 30px;
   background: $gray;
-  cursor: pointer;
 }
 
 .sbtn:hover {
@@ -200,4 +202,8 @@ h2.active {
   border-image: $gradient;
   font-size: 16px;
   margin: -20px 8px 0px 8px;
+}
+
+footer .container {
+  margin-top: 0;
 }

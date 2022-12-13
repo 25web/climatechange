@@ -1,24 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import axios from "../axios";
+import { AxiosAuth } from "./charts/GetChart";
 
 const Auth = ({ children }) => {
   const [tokenIsValid, setTokenIsValid] = useState(false);
-  async function AxiosAuth(path, callback) {
-    const token = "Bearer " + localStorage.getItem("token");
-    axios
-      .get("http://localhost:3001" + path, {
-        headers: {
-          Authorization: token,
-        },
-      })
-      .then((res) => {
-        callback(res);
-      })
-      .catch((err) => {
-        callback(err);
-      });
-  }
   useEffect(() => {
     AxiosAuth("/user/auth", (res) => {
       if (res.status === 200) {

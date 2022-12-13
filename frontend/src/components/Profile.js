@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import axios from "../axios";
 import { useNavigate } from "react-router-dom";
-
-export default function Delete() {
+export default function Profile() {
   const [username, setUsername] = useState("");
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
@@ -11,6 +10,7 @@ export default function Delete() {
   let body = JSON.stringify({
     username: username,
   });
+
   var authOptions = {
     method: "post",
     url: url,
@@ -25,7 +25,8 @@ export default function Delete() {
       .then((res) => {
         console.log(res);
         if (res.status === 200) {
-          navigate("/"); // the right one will be added later
+          navigate("/login");
+          window.location.reload(true);
         }
         setMessage(res.data.message);
       })
@@ -37,18 +38,14 @@ export default function Delete() {
 
   return (
     <div>
-      <div>
-        <input
-          onChange={(e) => {
-            setUsername(e.target.value);
-          }}
-          type="text"
-          placeholder="Username"
-        />
-      </div>
       <p>{message}</p>
       <div className="container">
-        <button onClick={deleteUser} data="delete">
+        <button
+          type="button"
+          class="btn btn-danger"
+          onClick={deleteUser}
+          data="delete"
+        >
           Delete
         </button>
       </div>

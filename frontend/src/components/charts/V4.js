@@ -63,15 +63,15 @@ export function V4Chart() {
       {
         label: "Human Evolution and Activities",
         data: v10,
-        borderColor: "rgb(4, 255, 46)",
-        backgroundColor: "rgb(4, 255, 46)",
+        borderColor: "rgb(255, 4, 234)",
+        backgroundColor: "rgb(0, 0, 0)",
         hidden: false,
         showLine: false,
         parsing: {
           xAxisKey: "year",
           yAxisKey: "val",
         },
-        pointRadius: 3,
+        pointRadius: 10,
       },
       {
         label: boolean ? "co2 mean" : "",
@@ -112,6 +112,7 @@ export function V4Chart() {
     scales: {
       x: {
         type: "linear",
+        max: 2020,
       },
     },
   };
@@ -129,14 +130,18 @@ export function V4Chart() {
           <div>
             <h4>Description</h4>
             <p>
-              Antarctic Ice Core records of atmospheric CO2 ratios presented here are derived from three ice cores obtained at Law Dome, East Antarctica from 1987 to 1993 combined with
-              Mauna Loa measurements.
+              Antarctic Ice Core records of atmospheric CO2 ratios presented
+              here are derived from three ice cores obtained at Law Dome, East
+              Antarctica from 1987 to 1993 combined with Mauna Loa measurements.
             </p>
           </div>
           <div>
             <h4>Source</h4>
             <div>
-              <a>Antarctic Ice Core records of atmospheric CO2 ratios combined with Mauna Loa measurement:</a>
+              <a>
+                Antarctic Ice Core records of atmospheric CO2 ratios combined
+                with Mauna Loa measurement:
+              </a>
               &nbsp;&nbsp;
               <a
                 className="alink"
@@ -153,10 +158,12 @@ export function V4Chart() {
               </a>
             </div>
             <div>
-              <a>Atmospheric CO2 concentrations from Mauna Loa measurements starting 1958:</a>
+              <a>
+                Atmospheric CO2 concentrations from Mauna Loa measurements
+                starting 1958:
+              </a>
               &nbsp;&nbsp;
-              <a className="alink" href="https://gml.noaa.gov/ccgg/trends/"
-              >
+              <a className="alink" href="https://gml.noaa.gov/ccgg/trends/">
                 Description
               </a>
               &nbsp;&nbsp;
