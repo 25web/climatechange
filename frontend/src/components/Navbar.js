@@ -6,28 +6,26 @@ import "../css/FNH.scss";
 import Dropdown from "react-bootstrap/Dropdown";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { AxiosAuth } from "./charts/GetChart";
 
 function Navbarr() {
   const [tokenIsValid, setTokenIsValid] = useState(false);
-  const navigate = useNavigate();
-  // const [boolean, setBoolean] = useState(false);
 
   function logout() {
     localStorage.removeItem("token");
-  //   if (tokenIsValid === false) {
-  //     setBoolean(false);
-  //   } else {
-  //     setBoolean(true);
-  //   }
+    if (tokenIsValid === true) {
+      window.location.href = "/login";
+    }
   }
 
-  const checkStorage = (key) => {
-    const storedData = localStorage.getItem(key);
-    if (!storedData) setTokenIsValid(false);
-    else setTokenIsValid(true);
-  };
   useEffect(() => {
-    checkStorage("token");
+    AxiosAuth("/user/auth", (res) => {
+      if (res.status === 200) {
+        setTokenIsValid(true);
+      } else {
+        setTokenIsValid(false);
+      }
+    });
   }, []);
 
   return (
@@ -36,12 +34,8 @@ function Navbarr() {
         <Nav.Link as={Link} to="/profile">
           Profile
         </Nav.Link>
-        <Nav.Link as={Link} to="/login">
-            Login
-          </Nav.Link>
         <Nav.Link as={Link} onClick={logout} to="/login">
-          {/* {!boolean ? "login" : "logout"} */}
-          Logout
+          {!tokenIsValid ? "login" : "logout"}
         </Nav.Link>
         <Dropdown>
           <Dropdown.Toggle variant="success" id="dropdown-custom">
