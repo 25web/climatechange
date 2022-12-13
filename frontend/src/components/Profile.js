@@ -5,14 +5,14 @@ export default function Profile() {
   const [username, setUsername] = useState("");
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
-  let url = `http://localhost:3001/user/delete`;
+  let url = `http://localhost:3001/user`;
 
   let body = JSON.stringify({
     username: username,
   });
 
   var authOptions = {
-    method: "post",
+    method: "delete",
     url: url,
     data: body,
     headers: {
