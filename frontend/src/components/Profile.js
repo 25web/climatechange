@@ -1,17 +1,25 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "../axios";
 import { useNavigate } from "react-router-dom";
+
 export default function Profile() {
   const [username, setUsername] = useState("");
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
+
+  useEffect(() => {
+    axios.get("http://localhost:3001/user/info").then((res) => {
+      setUsername(res.data.user.username);
+    });
+  });
+
   let url = `http://localhost:3001/user`;
 
   let body = JSON.stringify({
     username: username,
   });
 
-  var authOptions = {
+  var deleteUserOptions = {
     method: "delete",
     url: url,
     data: body,
@@ -21,7 +29,7 @@ export default function Profile() {
     json: true,
   };
   const deleteUser = () => {
-    axios(authOptions)
+    axios(deleteUserOptions)
       .then((res) => {
         console.log(res);
         if (res.status === 200) {
@@ -39,6 +47,7 @@ export default function Profile() {
   return (
     <div>
       <p>{message}</p>
+      <p>{username}</p>
       <div className="container">
         <button
           type="button"
