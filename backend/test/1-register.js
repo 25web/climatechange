@@ -10,7 +10,8 @@ const Password = "ptest";
 const Fname = "ftest";
 const Lname = "ltest";
 
-describe("test login", function () {
+//test user register with different scenarios
+describe("test register", function () {
   it("test whitout username,password,fname and lname", function (done) {
     chai
       .request(url)

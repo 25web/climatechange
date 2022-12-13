@@ -3,6 +3,7 @@ const crypto = require("crypto");
 const jwt = require("../config/jwt");
 const user = require("../models/userModel");
 
+//User login
 const login = (req, res) => {
   const { username, password } = req.body;
 
@@ -19,7 +20,7 @@ const login = (req, res) => {
     if (result.length === 0) {
       return res.status(400).json({ message: "Invalid username or password." });
     }
-
+  //check user input password against hashed password in database
     bcrypt.compare(password, result[0].password.toString(), (err, match) => {
       if (err) {
         return res.json(err);
@@ -38,7 +39,7 @@ const login = (req, res) => {
     });
   });
 };
-
+//User registration
 const register = (req, res) => {
   if (
     !req.body.username ||
@@ -62,11 +63,11 @@ const register = (req, res) => {
     });
   }
 };
-
+//Get all users
 const getAllUsers = (req, res) => {
   return res.status(200).json({ message: "Return all users." });
 };
-
+//Delete user
 const deleteUser = (req, res) => {
   if (!req.userId) {
     return res.status(401).json({ message: "Unauthorized." });
@@ -82,7 +83,7 @@ const deleteUser = (req, res) => {
     return res.status(200).json({ message: "User deleted successfully." });
   });
 };
-
+//Get user info
 const userInfo = (req, res) => {
   if (!req.userId) {
     return res.status(401).json({ message: "Unauthorized." });
@@ -99,7 +100,7 @@ const userInfo = (req, res) => {
     return res.status(200).json({ user: result[0] });
   });
 };
-
+//Check token validity
 const checkToken = (req, res) => {
   if (!req.userId) {
     return res.status(401).json({ message: "Unauthorized." });

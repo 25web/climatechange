@@ -1,13 +1,13 @@
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
 
-//creates token for the user and verifies it
+//creates token for the user 
 function generateToken(user) {
   return jwt.sign({ userId: user }, process.env.JWT_SECRET, {
     expiresIn: "1h",
   });
 }
-
+//verify user token
 function verifyToken(req, res, next) {
   const authHeader = req.headers["authorization"];
   const token = authHeader && authHeader.split(" ")[1];

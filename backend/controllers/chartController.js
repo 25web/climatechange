@@ -81,7 +81,7 @@ const getV6 = (req, res) => {
     return res.status(200).json(result);
   });
 };
-//fetch data for chart 7
+//fetch data for chart 7 notice that the chart also has v10 data included
 const getV7 = (req, res) => {
   chartModel.getV7((err, result) => {
     if (err) {
