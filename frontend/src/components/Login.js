@@ -77,7 +77,7 @@ export default function Login() {
         <p data-testid="err">{message}</p>
       </div>
       <div className="container">
-        <button onClick={login} data-testid="login" className="btn">
+        <button onClick={login} data-testid="login" className="btnn">
           Login
         </button>
       </div>
