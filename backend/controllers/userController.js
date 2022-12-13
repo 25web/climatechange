@@ -84,9 +84,13 @@ const deleteUser = (req, res) => {
   });
 };
 
+const checkToken = (err, res) => {
+  return res.status(200).json({ message: "Token is valid." });
+};
 module.exports = {
   register,
   getAllUsers,
   login,
   deleteUser,
+  checkToken,
 };

@@ -7,5 +7,6 @@ router.get("/", jwt.verifyToken, userController.getAllUsers);
 router.post("/register", userController.register);
 router.post("/login", userController.login);
 router.post("/delete", jwt.verifyToken, userController.deleteUser);
+router.get("/auth", jwt.verifyToken, userController.checkToken);
 
 module.exports = router;
