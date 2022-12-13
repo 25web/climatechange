@@ -20,7 +20,7 @@ function App() {
         timer = setInterval(() => {
           localStorage.clear();
           window.location.href = "/login";
-        }, 10000);
+        }, 900000);
       }
     };
     document.onkeydown = reset;
