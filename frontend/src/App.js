@@ -6,11 +6,8 @@ import { Routes, Route } from "react-router-dom";
 import NotFound from "./components/NotFound";
 import N2 from "./components/N2";
 import N1 from "./components/N1";
-import N2 from "./components/N2";
 import CustomView from "./components/CustomView";
 import Auth from "./components/Auth";
-import { V9Chart } from "./components/charts/V9";
-import Delete from "./components/Delete";
 import React, { useEffect } from "react";
 import Profile from "./components/Profile";
 
