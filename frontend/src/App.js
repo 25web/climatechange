@@ -2,7 +2,7 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import NotFound from "./components/NotFound";
 import N2 from "./components/N2";
 import N1 from "./components/N1";
@@ -36,6 +36,7 @@ function App() {
         </div>
         <div className="main">
           <Routes>
+            <Route exact path="/" element={<Navigate to="/login" />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="*" element={<NotFound />} />
