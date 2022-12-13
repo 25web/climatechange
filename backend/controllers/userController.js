@@ -83,13 +83,35 @@ const deleteUser = (req, res) => {
   });
 };
 
-const checkToken = (err, res) => {
+const userInfo = (req, res) => {
+  if (!req.userId) {
+    return res.status(401).json({ message: "Unauthorized." });
+  }
+  user.userInfo(req.userId, (err, result) => {
+    if (err) {
+      console.log(err);
+      return res.status(500).json({ message: "Internal server error." });
+    }
+    if (result.length === 0) {
+      return res.status(400).json({ message: "User does not exist." });
+    }
+    delete result[0].password;
+    return res.status(200).json({ user: result[0] });
+  });
+};
+
+const checkToken = (req, res) => {
+  if (!req.userId) {
+    return res.status(401).json({ message: "Unauthorized." });
+  }
   return res.status(200).json({ message: "Token is valid." });
 };
+
 module.exports = {
   register,
   getAllUsers,
   login,
   deleteUser,
   checkToken,
+  userInfo,
 };

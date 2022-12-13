@@ -8,5 +8,6 @@ router.post("/register", userController.register);
 router.post("/login", userController.login);
 router.post("/delete", jwt.verifyToken, userController.deleteUser);
 router.get("/auth", jwt.verifyToken, userController.checkToken);
+router.get("/info", jwt.verifyToken, userController.userInfo);
 
 module.exports = router;
