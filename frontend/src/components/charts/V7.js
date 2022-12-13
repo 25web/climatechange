@@ -8,11 +8,15 @@ import "chartjs-adapter-luxon";
 export function V7Chart() {
   const [v6, setV6] = useState([]);
   const [v7, setV7] = useState([]);
+  const [v10, setV10] = useState([]);
+  const [elements, setElements] = useState([]);
 
   useEffect(() => {
     GetChart("/chart/v7", (res) => {
       setV6(res.data.resV6);
       setV7(res.data.resV7);
+      setV10(res.data.resv10_7);
+      setElements(res.data);
     });
   }, []);
 
@@ -43,9 +47,45 @@ export function V7Chart() {
         yAxisID: "y1",
         pointRadius: 0,
       },
+      {
+        label: "Human Evolution and Activities",
+        data: v10,
+        borderColor: "rgb(255, 4, 234)",
+        backgroundColor: "rgb(255, 4, 234)",
+        hidden: false,
+        showLine: false,
+        parsing: {
+          xAxisKey: "year",
+          yAxisKey: "val",
+        },
+        pointRadius: 3,
+      },
     ],
   };
-  let optionsYear = {
+
+  let options = {
+    responsive: true,
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: function (context) {
+            let label = context.dataset.label || "";
+            if (context.dataset.label === "Human Evolution and Activities") {
+              label = context.raw.event;
+            }
+            return label;
+          },
+        },
+      },
+      title: {
+        display: true,
+        text: "Evolution of global temperature over the past two million years",
+        color: "rgb(0, 0, 7)",
+        font: {
+          size: 17,
+        },
+      },
+    },
     scales: {
       x: {
         ticks: {
@@ -78,27 +118,48 @@ export function V7Chart() {
   };
   return (
     <>
-      <div className="chart-wrapper">
-        <Line options={optionsYear} data={data} />
-      </div>
-      <div>
-        <h4>Description</h4>
-        <p>Evolution of global temperature over the past two million years</p>
-      </div>
-      <div>
-        <h4>Source</h4>
-        <div className="inner">
-          <a className="alink" href="http://carolynsnyder.com/publications.php">
-            Dataset
-          </a>
+      <div className="space">
+        <div className="chart-wrapper">
+          <Line options={options} data={data} />
         </div>
-        <div className="inner">
-          <a
-            className="alink"
-            href="https://climate.fas.harvard.edu/files/climate/files/snyder_2016.pdf"
-          >
-            Description
-          </a>
+        <div className="chart-wrapper">
+          <div>
+            <h4>Description</h4>
+            <p>
+              Evolution of global temperature over the past two million years combined with major human evolution and cultural events.
+            </p>
+          </div>
+
+          <div>
+            <h4>Source</h4>
+            <div className="inner">
+              <a>Evolution of global temperature over the past two million years:</a>
+              &nbsp;&nbsp;
+              <a
+                className="alink"
+                href="https://climate.fas.harvard.edu/files/climate/files/snyder_2016.pdf"
+              >
+                Description
+              </a>
+              &nbsp;&nbsp;
+              <a
+                className="alink"
+                href="http://carolynsnyder.com/publications.php"
+              >
+                Dataset
+              </a>
+            </div>
+            <div className="inner">
+              <a>Human Evolution and Activities:</a>
+              &nbsp;&nbsp;
+              <a
+                className="alink"
+                href="https://www.southampton.ac.uk/~cpd/history.html"
+              >
+                Dataset
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </>

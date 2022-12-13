@@ -1,0 +1,30 @@
+$gray: #282c34;
+$medium-gray: lighten(#27282d, 25%);
+$light-gray: lighten(#27282d, 65%);
+$gradient: linear-gradient(
+  to right top,
+  #58dbff,
+  #00bbff,
+  #0097ff,
+  #006cff,
+  #122feb
+);
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  // background-image: $gradient;
+  background-color: lighten($gray, 6%);
+  overflow: auto;
+}
+.main {
+  min-height: calc(100vh - 20px);
+}
+.footer {
+  background: #222;
+  color: white;
+}

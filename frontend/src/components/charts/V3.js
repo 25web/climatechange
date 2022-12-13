@@ -33,8 +33,18 @@ export function V3Chart() {
       },
     ],
   };
-  let optionsYear = {
+  let options = {
     responsive: true,
+    plugins: {
+      title: {
+        display: true,
+        text: "Atmospheric CO2 concentrations from Mauna Loa measurements starting 1958",
+        color: "rgb(0, 0, 7)",
+        font: {
+          size: 17,
+        },
+      },
+    },
     scales: {
       x: {
         type: "time",
@@ -53,33 +63,37 @@ export function V3Chart() {
 
   return (
     <>
-      <div className="chart-wrapper">
-        <Line options={optionsYear} data={data} />
-        <button onClick={() => setBoolean(!boolean)}>
-          {boolean ? "annual" : "monthly"}
-        </button>
-      </div>
-      <div>
-        <h4>Description</h4>
-        <p>
-          Atmospheric CO2 concentrations from Mauna Loa measurements starting
-          1958
-        </p>
-      </div>
-      <div>
-        <h4>Source</h4>
-        <div className="inner">
-          <a
-            className="alink"
-            href="https://gml.noaa.gov/ccgg/about/co2_measurements.html"
-          >
-            Description
-          </a>
+      <div className="space">
+        <div className="chart-wrapper">
+          <Line options={options} data={data} />
+          <button className="sbtn" onClick={() => setBoolean(!boolean)}>
+            {boolean ? "annual" : "monthly"}
+          </button>
         </div>
-        <div className="inner">
-          <a className="alink" href="https://gml.noaa.gov/ccgg/trends/">
-            Dataset
-          </a>
+        <div className="chart-wrapper">
+          <div>
+            <h4>Description</h4>
+            <p>
+              Atmospheric CO2 concentrations from Mauna Loa measurements
+              starting from 1958.
+            </p>
+          </div>
+          <div>
+            <h4>Source</h4>
+            <div className="inner">
+              <a
+                className="alink"
+                href="https://gml.noaa.gov/ccgg/about/co2_measurements.html"
+              >
+                Description
+              </a>
+            </div>
+            <div className="inner">
+              <a className="alink" href="https://gml.noaa.gov/ccgg/trends/">
+                Dataset
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </>

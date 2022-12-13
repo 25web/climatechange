@@ -29,7 +29,7 @@ export default function Login() {
         console.log(res);
         if (res.status === 200) {
           localStorage.setItem("token", res.data.token);
-          navigate("/"); // the right one will be added later
+          navigate("/N1"); // the right one will be added later
         }
         setMessage(res.data.message);
       })
@@ -71,10 +71,12 @@ export default function Login() {
         <i className="zmdi zmdi-lock zmdi-hc-lg"></i>
       </div>
       <div className="pmessage">
-        <p>{message}</p>
+        <p data-testid="err">{message}</p>
       </div>
       <div className="container">
-        <button onClick={login} className="btn" data="Login"></button>
+        <button onClick={login} data-testid="login" className="btn">
+          Login
+        </button>
       </div>
     </div>
   );

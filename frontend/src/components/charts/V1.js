@@ -68,8 +68,18 @@ export function V1Chart() {
       },
     ],
   };
-  let optionsYear = {
+  let options = {
     responsive: true,
+    plugins: {
+      title: {
+        display: true,
+        text: "Global historical surface temperature anomalies",
+        color: "rgb(0, 0, 7)",
+        font: {
+          size: 17,
+        },
+      },
+    },
     scales: {
       x: {
         type: "time",
@@ -89,54 +99,58 @@ export function V1Chart() {
   };
   return (
     <>
-      <div className="chart-wrapper">
-        <Line options={optionsYear} data={data} />
-        <button onClick={() => setBoolean(!boolean)}>
-          {boolean ? "annual" : "monthly"}
-        </button>
-        <button onClick={() => setBoolean2(!boolean2)}>
-          {boolean2 ? "Hide v2" : "Add v2"}
-        </button>
-      </div>
-      <div>
-        <h4>Description</h4>
-        <p>Global historical surface temperature anomalie???????</p>
-      </div>
-      <div>
-        <h4>Source</h4>
-        <div>
-          <a>v1:</a>
-          &nbsp;&nbsp;
-          <a
-            className="alink"
-            href="https://www.metoffice.gov.uk/hadobs/hadcrut5/"
-          >
-            Description
-          </a>
-          &nbsp;&nbsp;
-          <a
-            className="alink"
-            href="https://www.metoffice.gov.uk/hadobs/hadcrut5/data/current/download.html"
-          >
-            Dataset
-          </a>
+      <div className="space">
+        <div className="chart-wrapper">
+          <Line options={options} data={data} />
+          <button className="sbtn" onClick={() => setBoolean(!boolean)}>
+            {boolean ? "annual" : "monthly"}
+          </button>
+          <button className="sbtn" onClick={() => setBoolean2(!boolean2)}>
+            {boolean2 ? "Hide v2" : "Add v2"}
+          </button>
         </div>
-        <div>
-          <a>v2:</a>
-          &nbsp;&nbsp;
-          <a
-            className="alink"
-            href="https://bolin.su.se/data/moberg-2012-nh-1?n=moberg-2005"
-          >
-            Description
-          </a>
-          &nbsp;&nbsp;
-          <a
-            className="alink"
-            href="https://www.ncei.noaa.gov/pub/data/paleo/contributions_by_author/moberg2005/nhtemp-moberg2005.txt"
-          >
-            Dataset
-          </a>
+        <div className="chart-wrapper">
+          <div>
+            <h4>Description</h4>
+            <p>Global historical surface temperature anomalies from January 1850 onwards combined with 2,000-year temperature reconstruction.</p>
+          </div>
+          <div>
+            <h4>Source</h4>
+            <div>
+              <a>Global historical surface temperature anomalies:</a>
+              &nbsp;&nbsp;
+              <a
+                className="alink"
+                href="https://www.metoffice.gov.uk/hadobs/hadcrut5/"
+              >
+                Description
+              </a>
+              &nbsp;&nbsp;
+              <a
+                className="alink"
+                href="https://www.metoffice.gov.uk/hadobs/hadcrut5/data/current/download.html"
+              >
+                Dataset
+              </a>
+            </div>
+            <div>
+              <a>Northern Hemisphere 2,000-year temperature reconstruction:</a>
+              &nbsp;&nbsp;
+              <a
+                className="alink"
+                href="https://bolin.su.se/data/moberg-2012-nh-1?n=moberg-2005"
+              >
+                Description
+              </a>
+              &nbsp;&nbsp;
+              <a
+                className="alink"
+                href="https://www.ncei.noaa.gov/pub/data/paleo/contributions_by_author/moberg2005/nhtemp-moberg2005.txt"
+              >
+                Dataset
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </>

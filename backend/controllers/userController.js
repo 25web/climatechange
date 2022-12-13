@@ -27,8 +27,8 @@ const login = (req, res) => {
       if (match) {
         const token = jwt.generateToken(result[0].user_ID);
         return res.status(200).json({
-          token: token,
           message: "Successfully logged in.",
+          token: token,
         });
       } else {
         return res.status(400).json({
@@ -55,6 +55,8 @@ const register = (req, res) => {
           res.status(400).json({ message: "Username already exists." });
           return;
         }
+        console.log(err);
+        return res.status(500).json({ message: "Internal server error." });
       }
       res.status(200).json({ message: "User registered successfully." });
     });
@@ -62,7 +64,6 @@ const register = (req, res) => {
 };
 
 const getAllUsers = (req, res) => {
-  // FIXME
   return res.status(200).json({ message: "Return all users." });
 };
 
@@ -77,15 +78,19 @@ const deleteUser = (req, res) => {
       return res.status(500).json({ message: "Internal server error." });
     }
     if (result.affectedRows === 0) {
-      return res.status(400).json({ message: "User not found." });
+      return res.status(400).json({ message: "User does not exist." });
     }
     return res.status(200).json({ message: "User deleted successfully." });
   });
 };
 
+const checkToken = (err, res) => {
+  return res.status(200).json({ message: "Token is valid." });
+};
 module.exports = {
   register,
   getAllUsers,
   login,
   deleteUser,
+  checkToken,
 };
