@@ -43,9 +43,15 @@ function Navbarr() {
           </Dropdown.Toggle>
 
           <Dropdown.Menu>
-            <Dropdown.Item href="/n1">N1</Dropdown.Item>
-            <Dropdown.Item href="/n2">N2</Dropdown.Item>
-            <Dropdown.Item href="/createview">Create a view</Dropdown.Item>
+            <Dropdown.Item as={Link} to="/n1">
+              N1
+            </Dropdown.Item>
+            <Dropdown.Item as={Link} to="/n2">
+              N2
+            </Dropdown.Item>
+            <Dropdown.Item as={Link} to="/createview">
+              Create a view
+            </Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
       </Nav>
