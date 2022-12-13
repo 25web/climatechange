@@ -1,60 +1,73 @@
 import React, { useState } from "react";
 import "../css/FNH.scss";
+import axios from "../axios";
 
 export default function CustomView() {
   const [checkedValues, setCheckedValues] = useState([]);
 
-  const handleChange = (event) => {
-    const { value } = event.target;
+  const [charts, setCharts] = useState([]);
+
+  const handleCheckboxChange = (event) => {
+    const chart = event.target.value;
     if (event.target.checked) {
-      setCheckedValues([...checkedValues, value]);
+      setCharts([...charts, chart]);
     } else {
-      setCheckedValues(checkedValues.filter((v) => v !== value));
+      setCharts(charts.filter((c) => c !== chart));
     }
+  };
+
+  const handleSubmit = () => {
+    axios
+      .post("http://localhost:3001/view/create", { title: "test", charts })
+      .then((response) => {
+        console.log(response);
+      });
   };
 
   return (
     <div className="checkbox">
-      <label>
-        <input type="checkbox" value="1" onChange={handleChange} />
-        V1
-      </label>
-      <label>
-        <input type="checkbox" value="3" onChange={handleChange} />
-        V3
-      </label>
-      <label>
-        <input type="checkbox" value="4" onChange={handleChange} />
-        V4
-      </label>
-      <label>
-        <input type="checkbox" value="5" onChange={handleChange} />
-        V5
-      </label>
-      <label>
-        <input type="checkbox" value="6" onChange={handleChange} />
-        V6
-      </label>
-      <label>
-        <input type="checkbox" value="7" onChange={handleChange} />
-        V7
-      </label>
-      <label>
-        <input type="checkbox" value="8" onChange={handleChange} />
-        V8
-      </label>
-      <label>
-        <input type="checkbox" value="9" onChange={handleChange} />
-        V9
-      </label>
-      <div>
-        Checked values:
-        <ul>
-          {checkedValues.map((value) => (
-            <li key={value}>{value}</li>
-          ))}
-        </ul>
-      </div>
+      <form onSubmit={handleSubmit}>
+        <label>
+          <input type="checkbox" value="v1" onChange={handleCheckboxChange} />
+          V1
+        </label>
+        <label>
+          <input type="checkbox" value="v2" onChange={handleCheckboxChange} />
+          V2
+        </label>
+        <label>
+          <input type="checkbox" value="v3" onChange={handleCheckboxChange} />
+          V3
+        </label>
+        <label>
+          <input type="checkbox" value="v4" onChange={handleCheckboxChange} />
+          V4
+        </label>
+        <label>
+          <input type="checkbox" value="v5" onChange={handleCheckboxChange} />
+          V5
+        </label>
+        <label>
+          <input type="checkbox" value="v6" onChange={handleCheckboxChange} />
+          V6
+        </label>
+        <label>
+          <input type="checkbox" value="v7" onChange={handleCheckboxChange} />
+          V7
+        </label>
+        <label>
+          <input type="checkbox" value="v8" onChange={handleCheckboxChange} />
+          V8
+        </label>
+        <label>
+          <input type="checkbox" value="v9" onChange={handleCheckboxChange} />
+          V9
+        </label>
+        <br></br>
+        <button class="btn btn-success" type="submit">
+          Create new custom view
+        </button>
+      </form>
     </div>
   );
 }
