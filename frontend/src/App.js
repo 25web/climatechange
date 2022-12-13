@@ -11,6 +11,7 @@ import Auth from "./components/Auth";
 import React, { useEffect } from "react";
 import Profile from "./components/Profile";
 
+//creates routes and has a timer 
 function App() {
   useEffect(() => {
     let timer;
