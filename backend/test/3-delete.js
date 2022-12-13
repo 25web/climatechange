@@ -10,6 +10,7 @@ const wusername = "wtest";
 const correctPassword = "ptest";
 let token = "";
 
+//test user delete with different scenarios
 describe("test delete", function () {
   it("test correct username and password", function (done) {
     chai

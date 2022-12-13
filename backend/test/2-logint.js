@@ -10,6 +10,7 @@ const correctUser = "utest";
 const wrongPassword = "wtest";
 const correctPassword = "ptest";
 
+//test user login with different scenarios
 describe("test login", function () {
   it("test whitout username and password", function (done) {
     chai

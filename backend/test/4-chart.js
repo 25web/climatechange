@@ -6,6 +6,7 @@ chai.use(chaiHttp);
 
 const url = "http://localhost:3001";
 
+//test all charts
 describe("test chart", function () {
   it("test chart v1", function (done) {
     chai

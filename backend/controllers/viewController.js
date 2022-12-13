@@ -2,6 +2,7 @@ const viewModel = require("../models/viewModel");
 const jwt = require("../config/jwt");
 const shortid = require("shortid");
 
+//fetch view data
 const getView = (req, res) => {
   viewModel.get(req.params.url, (err, result) => {
     if (err) {
@@ -14,7 +15,7 @@ const getView = (req, res) => {
     return res.status(200).json(result);
   });
 };
-
+//create new view
 const newView = (req, res) => {
   if (!req.userId) {
     return res.status(401).json({ message: "Unauthorized." });
@@ -46,7 +47,7 @@ const newView = (req, res) => {
       .json({ status: "success", url: url, message: "View created." });
   });
 };
-
+//delete view
 const deleteView = (req, res) => {
   if (!req.userId) {
     return res.status(401).json({ message: "Unauthorized." });
@@ -64,7 +65,7 @@ const deleteView = (req, res) => {
       .json({ status: "success", message: "View deleted." });
   });
 };
-
+//get all views
 const getAllViews = (req, res) => {
   viewModel.all((err, result) => {
     if (err) {
