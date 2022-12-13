@@ -9,6 +9,8 @@ jest.mock("react-router-dom", () => ({
   useNavigate: () => mockedUsedNavigate,
 }));
 describe("<Login />", () => {
+
+  //test for rendering login form
   it("renders the login form", () => {
     render(<Login />);
     const name = screen.getByPlaceholderText("Username");
@@ -18,6 +20,7 @@ describe("<Login />", () => {
     expect(pwd).toBeDefined();
   });
 
+  //test for updating state when a value change happens
   it("updates state when form input values change", () => {
     const { getByPlaceholderText } = render(<Login />);
     const usernameInput = getByPlaceholderText("Username");
@@ -30,12 +33,14 @@ describe("<Login />", () => {
     expect(passwordInput.value).toBe("ddd");
   });
 
+  //test for rendering the login button
   it("renders the login button", () => {
     const { getByTestId } = render(<Login />);
     const loginButton = getByTestId("login");
     expect(loginButton).toBeDefined();
   });
-
+  
+  //test for submitting login data
   it("attempt to submit", async () => {
     const { getByPlaceholderText, getByTestId } = render(<Login />);
     const usernameInput = getByPlaceholderText("Username");

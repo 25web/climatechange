@@ -4,6 +4,7 @@ import axios from "../axios";
 import { useNavigate } from "react-router-dom";
 import { set } from "immutable";
 
+//creates new account and redirects to login page
 export default function Register() {
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");

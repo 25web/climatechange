@@ -1,6 +1,8 @@
 import React from "react";
 import "../css/FNH.scss";
 
+
+//creates footer
 export default function Footer() {
   return (
     <footer>

@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import "../../css/chart.scss";
 import "chartjs-adapter-luxon";
 
+//create a chart and call backend for chartdata
 export function V4Chart() {
   const [v4_1, setV41] = useState([]);
   const [v4_2, setV42] = useState([]);

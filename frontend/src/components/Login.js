@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import axios from "../axios";
 import { useNavigate } from "react-router-dom";
 
+//lets user login and refreshes the page if username and pasword are correct and gives and error if they are wrong
 export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");

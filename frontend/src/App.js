@@ -17,6 +17,7 @@ import { V9Chart } from "./components/charts/V9";
 import Delete from "./components/Delete";
 import React, { useEffect } from "react";
 
+//creates routes and has a timer 
 function App() {
   useEffect(() => {
     //timer to logout user after 10 seconds(for testing) of inactivity
