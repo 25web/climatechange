@@ -3,9 +3,14 @@ import "../css/FNH.scss";
 import axios from "../axios";
 
 export default function CustomView() {
-  const [checkedValues, setCheckedValues] = useState([]);
-
   const [charts, setCharts] = useState([]);
+  const [title, setTitle] = useState("");
+
+  const sortAscending = (arr) => {
+    return arr.sort(function (a, b) {
+      return a.localeCompare(b);
+    });
+  };
 
   const handleCheckboxChange = (event) => {
     const chart = event.target.value;
@@ -17,8 +22,12 @@ export default function CustomView() {
   };
 
   const handleSubmit = () => {
+    const sortedCharts = sortAscending(charts);
     axios
-      .post("http://localhost:3001/view/create", { title: "test", charts })
+      .post("http://localhost:3001/view/create", {
+        title,
+        charts: sortedCharts,
+      })
       .then((response) => {
         console.log(response);
       });
@@ -27,6 +36,13 @@ export default function CustomView() {
   return (
     <div className="checkbox">
       <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          onChange={(e) => setTitle(e.target.value)}
+          placeholder="Enter title"
+        />
         <label>
           <input type="checkbox" value="v1" onChange={handleCheckboxChange} />
           V1
