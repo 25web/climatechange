@@ -2,9 +2,8 @@
 
 ## Description
 
-* FIXME
+2nd year OAMK website project on climate change involves the use of React, Node.js, and MySQL to create a website featuring different charts and visualizations on the topic.
 
----
 
 ## Installation
 
@@ -30,4 +29,7 @@
 ### Launch the environment
 
 * Run `npm start` in frontend/ and backend/ folders.
+
+---
+Creators Joni Pahikainen, Tomi Laine Hilppa Huhtanen and Juha-Pekka Kesonen
 
