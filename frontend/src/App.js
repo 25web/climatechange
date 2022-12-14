@@ -10,6 +10,7 @@ import CustomView from "./components/CustomView";
 import Auth from "./components/Auth";
 import React, { useEffect } from "react";
 import Profile from "./components/Profile";
+import View from "./components/View";
 
 function App() {
   useEffect(() => {
@@ -38,6 +39,7 @@ function App() {
             <Route exact path="/" element={<Navigate to="/login" />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/view/:url" element={<View />} />
             <Route path="*" element={<NotFound />} />
             <Route
               path="/profile"
