@@ -599,7 +599,7 @@ CREATE TABLE `v9` (
 
 LOCK TABLES `v9` WRITE;
 /*!40000 ALTER TABLE `v9` DISABLE KEYS */;
-INSERT INTO v9 VALUES ('Energy',73.2),('Industrial processes',5.2),('Waste',3.2),('Agriculture, Forestry & Land Use (AFOLU)',18.4);
+INSERT INTO `v9` VALUES ('Energy',73.2),('Industrial processes',5.2),('Waste',3.2),('Agriculture, Forestry & Land Use (AFOLU)',18.4);
 /*!40000 ALTER TABLE `v9` ENABLE KEYS */;
 UNLOCK TABLES;
 
