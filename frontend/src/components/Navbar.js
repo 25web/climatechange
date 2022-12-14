@@ -7,6 +7,7 @@ import Dropdown from "react-bootstrap/Dropdown";
 import { useEffect, useState } from "react";
 import { AxiosAuth } from "./charts/GetChart";
 
+//creates the navbar for the app
 function Navbarr() {
   const [tokenIsValid, setTokenIsValid] = useState(false);
 

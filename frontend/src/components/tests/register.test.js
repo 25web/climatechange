@@ -16,6 +16,8 @@ jest.mock("react-router-dom", () => ({
   useNavigate: () => mockedUsedNavigate,
 }));
 describe("<Register />", () => {
+
+  //test for rendering the register form
   it("renders the register form", () => {
     render(href_fix);
     const fname = screen.getByPlaceholderText("First Name");
@@ -29,6 +31,7 @@ describe("<Register />", () => {
     expect(lname).toBeDefined();
   });
 
+  //test for updating state when a value change happens
   it("updates state when form input values change", () => {
     const { getByPlaceholderText } = render(href_fix);
     const fnameInput = getByPlaceholderText("First Name");
@@ -47,12 +50,14 @@ describe("<Register />", () => {
     expect(passwordInput.value).toBe("ddd");
   });
 
+  //test for rendering the register button
   it("renders the register button", () => {
     const { getByTestId } = render(href_fix);
     const registerButton = getByTestId("register");
     expect(registerButton).toBeDefined();
   });
 
+  //test for attempting to submit
   it("attempt to submit", async () => {
     const { getByPlaceholderText, getByTestId } = render(href_fix);
     const fnameInput = getByPlaceholderText("First Name");

@@ -1,6 +1,7 @@
 const chartModel = require("../models/chartModel");
 const jwt = require("../config/jwt");
 
+//fetch data for chart 1
 const getV1 = (req, res) => {
   chartModel.getV1((err, result) => {
     if (err) {
@@ -15,7 +16,7 @@ const getV1 = (req, res) => {
       .json({ resMonthly: result[0], resAnnual: result[1], resV2: result[2] });
   });
 };
-
+//fetch data for chart 3
 const getV3 = (req, res) => {
   chartModel.getV3((err, result) => {
     if (err) {
@@ -30,6 +31,7 @@ const getV3 = (req, res) => {
       .json({ resMonthly: result[0], resAnnual: result[1] });
   });
 };
+//fetch data for chart 4, notice that the chart also has v10 data included
 const getV4 = (req, res) => {
   chartModel.getV4((err, result) => {
     if (err) {
@@ -53,6 +55,7 @@ const getV4 = (req, res) => {
     });
   });
 };
+//fetch data for chart 5
 const getV5 = (req, res) => {
   chartModel.getV5((err, result) => {
     if (err) {
@@ -65,7 +68,7 @@ const getV5 = (req, res) => {
     return res.status(200).json(result);
   });
 };
-
+//fetch data for chart 6
 const getV6 = (req, res) => {
   chartModel.getV6((err, result) => {
     if (err) {
@@ -78,7 +81,7 @@ const getV6 = (req, res) => {
     return res.status(200).json(result);
   });
 };
-
+//fetch data for chart 7 notice that the chart also has v10 data included
 const getV7 = (req, res) => {
   chartModel.getV7((err, result) => {
     if (err) {
@@ -102,7 +105,7 @@ const getV7 = (req, res) => {
     });
   });
 };
-
+//fetch data for chart 8
 const getV8 = (req, res) => {
   chartModel.getV8((err, result) => {
     if (err) {
@@ -141,6 +144,7 @@ const getV8 = (req, res) => {
     return res.status(200).json({ resV8: finalResult, resV8year: result[1] });
   });
 };
+//fetch data for chart 9 and generate colors for different doughnut chart segments
 const getV9 = (req, res) => {
   chartModel.getV9((err, result) => {
     if (err) {

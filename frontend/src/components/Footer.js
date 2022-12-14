@@ -1,6 +1,8 @@
 import React from "react";
 import "../css/FNH.scss";
 
+
+//creates a footerbar visualisation for the page
 export default function Footer() {
   return (
     <footer>

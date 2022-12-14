@@ -2,6 +2,7 @@ import V8 from "./charts/V8";
 import V9 from "./charts/V9";
 import "../css/chart.scss";
 
+//visualisation page for charts V8 and V9
 export default function N1() {
   return (
     <>

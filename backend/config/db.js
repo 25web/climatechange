@@ -1,6 +1,7 @@
 const mysql = require('mysql');
 require('dotenv').config();
 
+//maps database privileges for backend, credentials are stored in .env file
 const conn = mysql.createPool({
     host: process.env.DB_HOST.toString(),
     user: process.env.DB_USER.toString(),

@@ -12,6 +12,7 @@ import React, { useEffect } from "react";
 import Profile from "./components/Profile";
 import View from "./components/View";
 
+//creates routes and has a timer 
 function App() {
   useEffect(() => {
     let timer;
@@ -28,6 +29,7 @@ function App() {
     document.onmousemove = reset;
   }, []);
 
+  //creates the routes for the app
   return (
     <>
       <div className="all">

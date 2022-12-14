@@ -3,6 +3,7 @@ import "../css/FNH.scss";
 import axios from "../axios";
 import { useNavigate } from "react-router-dom";
 
+// creates a custom view for the user
 export default function CustomView() {
   const [charts, setCharts] = useState([]);
   const [title, setTitle] = useState("");

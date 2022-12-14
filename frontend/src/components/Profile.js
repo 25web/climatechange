@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "../axios";
 import { useNavigate } from "react-router-dom";
 
+//creates a profile page with a delete button and custom views list
 export default function Profile() {
   const [username, setUsername] = useState("");
   const [fname, setFname] = useState("");
