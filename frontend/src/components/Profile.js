@@ -4,12 +4,17 @@ import { useNavigate } from "react-router-dom";
 
 export default function Profile() {
   const [username, setUsername] = useState("");
-  const [message, setMessage] = useState("");
+  const [fname, setFname] = useState("");
+  const [lname, setLname] = useState("");
+  const [views, setViews] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
     axios.get("http://localhost:3001/user/info").then((res) => {
       setUsername(res.data.user.username);
+      setFname(res.data.user.fname);
+      setLname(res.data.user.lname);
+      setViews(res.data.user.views);
     });
   });
 
@@ -36,26 +41,30 @@ export default function Profile() {
           navigate("/login");
           window.location.reload(true);
         }
-        setMessage(res.data.message);
       })
       .catch((err) => {
         console.log(err.response.data);
-        setMessage(err.response.data.message);
       });
   };
 
   return (
     <div>
-      <p>{message}</p>
-      <p>{username}</p>
       <div className="container">
+        <h1>
+          Welcome back
+          <br />
+        </h1>
+        <h2>
+          {fname} {lname}
+        </h2>
+        <br></br>
         <button
           type="button"
           class="btn btn-danger"
           onClick={deleteUser}
           data="delete"
         >
-          Delete
+          Delete account
         </button>
       </div>
     </div>
